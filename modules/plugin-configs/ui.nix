@@ -1,0 +1,85 @@
+{...}: {
+  programs.nixvim = {
+    plugins = {
+      ccc = {
+        enable = true;
+        settings.highlighter = {
+          auto_enable = true;
+          lsp = true;
+        };
+      };
+
+      render-markdown = {
+        enable = true;
+        settings = {
+          conceal = true;
+          latex = {
+            enabled = false;
+          };
+        };
+      };
+
+      barbar = {
+        enable = true;
+        settings = {};
+      };
+
+      startup = {
+        enable = true;
+        settings.theme = "dashboard";
+      };
+
+      treesitter-context = {
+        enable = true;
+        settings = {
+          mode = "cursor";
+          max_lines = 2;
+        };
+      };
+    };
+
+    extraConfigLua = ''
+      -- hlargs
+      require("hlargs").setup({
+        color = "#399CA1",
+        highlight = {},
+        excluded_filetypes = {},
+        paint_arg_declarations = true,
+        paint_arg_usages = true,
+        paint_catch_blocks = { declarations = false, usages = false },
+        extras = { named_parameters = false, unused_arguments = true },
+        performance = {
+          parse_delay = 1, slow_parse_delay = 50,
+          max_iterations = 400, max_concurrent_partial_parses = 30,
+          debounce = { partial_parse = 3, partial_insert_mode = 100, total_parse = 700, slow_parse = 5000 },
+        },
+      })
+      vim.api.nvim_set_hl(0, "Hlargs",       { fg = "#399CA1", italic = true })
+      vim.api.nvim_set_hl(0, "HlargsUnused", { fg = "#9A9EA5", italic = true })
+
+      -- seeker / telescope transparent picker
+      local function set_transparent_picker_highlights()
+        local transparent_groups = {
+          "TelescopeNormal", "TelescopePromptNormal", "TelescopePromptTitle",
+          "TelescopeResultsNormal", "TelescopeResultsTitle",
+          "TelescopePreviewNormal", "TelescopePreviewTitle",
+        }
+        local border_groups = {
+          "TelescopeBorder", "TelescopePromptBorder",
+          "TelescopeResultsBorder", "TelescopePreviewBorder",
+        }
+        for _, group in ipairs(transparent_groups) do
+          vim.api.nvim_set_hl(0, group, { bg = "NONE", ctermbg = "NONE" })
+        end
+        for _, group in ipairs(border_groups) do
+          vim.api.nvim_set_hl(0, group, { fg = "#d97706", ctermfg = 172, bg = "NONE", ctermbg = "NONE" })
+        end
+      end
+      set_transparent_picker_highlights()
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        group = vim.api.nvim_create_augroup("TransparentSeekerPicker", { clear = true }),
+        callback = set_transparent_picker_highlights,
+      })
+    '';
+  };
+}

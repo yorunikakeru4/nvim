@@ -1,0 +1,69 @@
+{...}: let
+  prettier = {
+    __unkeyed-1 = "prettierd";
+    __unkeyed-2 = "prettier";
+    stop_after_first = true;
+  };
+in {
+  programs.nixvim.plugins.conform-nvim.settings = {
+    formatters_by_ft = {
+      sh = ["shfmt"];
+      nix = ["alejandra"];
+      just = ["just"];
+      lua = ["stylua"];
+      go = {
+        __unkeyed-1 = "goimports";
+        __unkeyed-2 = "gofmt";
+        stop_after_first = true;
+      };
+      rust = {
+        __unkeyed-1 = "rustfmt";
+        lsp_format = "fallback";
+      };
+      javascriptreact = prettier;
+      javascript = prettier;
+      typescript = prettier;
+      typescriptreact = prettier;
+      css = prettier;
+      html = prettier;
+      json = prettier;
+      toml = ["taplo"];
+      vue = prettier;
+      markdown = {
+        __unkeyed-1 = "prettierd";
+        lsp_fallback = true;
+      };
+      python = {
+        __unkeyed-1 = "ruff_format";
+        __unkeyed-2 = "ruff_organize_imports";
+        lsp_format = "fallback";
+      };
+      php = {
+        __unkeyed-1 = "php_cs_fixer";
+        stop_after_first = true;
+        lsp_format = "fallback";
+      };
+      c = ["clang_format"];
+      cpp = ["clang_format"];
+      haskell = ["ormolu"];
+      sql = {};
+      jsonc = {};
+    };
+
+    formatters.clang_format.prepend_args = ["--style=file" "--fallback-style=none"];
+
+    format_on_save = ''
+      function(bufnr)
+        local ft = vim.bo[bufnr].filetype
+        if ft == "jsonc" or ft == "sql" then
+          return
+        end
+
+        return {
+          async = false,
+          lsp_fallback = true,
+        }
+      end
+    '';
+  };
+}
