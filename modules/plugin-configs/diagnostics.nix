@@ -13,7 +13,14 @@
         ];
         callback.__raw = ''
           function()
-            require("lint").try_lint()
+            local lint = require("lint")
+
+            if vim.bo.filetype == "markdown" then
+              lint.try_lint("proselint")
+              return
+            end
+
+            lint.try_lint()
           end
         '';
       }
