@@ -6,7 +6,7 @@ Personal nixvim configuration packaged as a flake.
 
 ```nix
 {
-  inputs.yoru-nixvim.url = "git+https://codeberg.org/yorunikakeru/nixvim";
+  inputs.yoru-nixvim.url = "git+https://github.com/yorunikakeru4/nvim";
 
   home-manager.users.yorunikakeru.imports = [
     inputs.yoru-nixvim.homeModules.default
@@ -17,8 +17,8 @@ Personal nixvim configuration packaged as a flake.
 ## Without Home Manager
 
 ```bash
-nix run git+https://codeberg.org/yorunikakeru/nixvim
-nix profile install git+https://codeberg.org/yorunikakeru/nixvim
+nix run git+https://github.com/yorunikakeru4/nvim
+nix profile install git+https://github.com/yorunikakeru4/nvim
 ```
 
 ## Language toggles
