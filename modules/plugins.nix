@@ -64,6 +64,10 @@ in {
       flash.enable = true;
       diffview.enable = true;
       undotree.enable = true;
+      mini-icons = {
+        enable = true;
+        mockDevIcons = true;
+      };
     };
 
     extraPlugins = with pkgs.vimPlugins; [

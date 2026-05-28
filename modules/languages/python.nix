@@ -5,12 +5,13 @@
   ...
 }: let
   cfg = config.nixvimLanguages.python;
+  pythonWithDebugpy = pkgs.python3.withPackages (ps: [ps.debugpy]);
 in {
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       basedpyright
       ruff
-      python3Packages.debugpy
+      pythonWithDebugpy
     ];
 
     programs.nixvim.plugins.lsp.servers = {
@@ -39,7 +40,7 @@ in {
 
     programs.nixvim.extraConfigLua = ''
       -- nvim-dap-python (debugpy adapter)
-      require("dap-python").setup("python3")
+      require("dap-python").setup("${pythonWithDebugpy}/bin/python3")
     '';
   };
 }

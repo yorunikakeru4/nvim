@@ -67,13 +67,13 @@ in {
           program = function()
             return vim.fn.input("Executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
           end,
-          cwd = vim.fn.getcwd(),
+          cwd = function() return vim.fn.getcwd() end,
           stopOnEntry = false,
           args = {},
         },
       }
-      dap.configurations.c   = dap.configurations.rust
-      dap.configurations.cpp = dap.configurations.rust
+      dap.configurations.c   = vim.deepcopy(dap.configurations.rust)
+      dap.configurations.cpp = vim.deepcopy(dap.configurations.rust)
     '';
   };
 }
