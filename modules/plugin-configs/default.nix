@@ -11,5 +11,6 @@
     ./terminal.nix
     ./diagnostics.nix
     ./debug.nix
+    ./session.nix
   ];
 }
