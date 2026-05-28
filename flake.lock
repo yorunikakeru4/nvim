@@ -277,7 +277,6 @@
         ],
         "seeker-nvim": "seeker-nvim",
         "signup-nvim": "signup-nvim",
-        "stcursorword": "stcursorword",
         "vim-autoread": "vim-autoread",
         "vim-highlighturl": "vim-highlighturl",
         "vim-php-cs-fixer": "vim-php-cs-fixer"
@@ -329,22 +328,6 @@
       "original": {
         "owner": "Dan7h3x",
         "repo": "signup.nvim",
-        "type": "github"
-      }
-    },
-    "stcursorword": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1764470174,
-        "narHash": "sha256-2yQJT5iXmmDM+ybVgQY1fk0oMFn/3v0d0KcMzWde62U=",
-        "owner": "sontungexpt",
-        "repo": "stcursorword",
-        "rev": "ab099f1682a0b251cda8f089d028a31426b83a06",
-        "type": "github"
-      },
-      "original": {
-        "owner": "sontungexpt",
-        "repo": "stcursorword",
         "type": "github"
       }
     },

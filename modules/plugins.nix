@@ -100,8 +100,7 @@ in {
       haskell-scope-highlighting-nvim
       # custom plugins (from nvim-plugins sub-flake)
       custom.hbac-nvim
-      custom.stcursorword
-      custom.vim-autoread
+custom.vim-autoread
       custom.seeker-nvim
       custom.signup-nvim
       custom.markdown-plus-nvim

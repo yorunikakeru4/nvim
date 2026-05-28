@@ -7,10 +7,7 @@
     hbac-nvim.url = "github:axkirillov/hbac.nvim";
     hbac-nvim.flake = false;
 
-    stcursorword.url = "github:sontungexpt/stcursorword";
-    stcursorword.flake = false;
-
-    vim-autoread.url = "github:djoshea/vim-autoread";
+vim-autoread.url = "github:djoshea/vim-autoread";
     vim-autoread.flake = false;
 
     seeker-nvim.url = "github:2kabhishek/seeker.nvim";
@@ -77,8 +74,7 @@
           ];
         })
         .overrideAttrs (_: {postInstall = "";});
-      stcursorword = mk "stcursorword" inputs.stcursorword;
-      vim-autoread = mk "vim-autoread" inputs.vim-autoread;
+vim-autoread = mk "vim-autoread" inputs.vim-autoread;
       seeker-nvim =
         (pkgs.vimUtils.buildVimPlugin {
           pname = "seeker-nvim";
