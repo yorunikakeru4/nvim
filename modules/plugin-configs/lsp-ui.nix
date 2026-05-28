@@ -1,11 +1,6 @@
 {...}: {
   programs.nixvim = {
     plugins = {
-      navic = {
-        enable = true;
-        settings.highlight = true;
-      };
-
       neogen = {
         enable = true;
         settings = {};

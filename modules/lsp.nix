@@ -17,13 +17,6 @@
           lsp.inlay_hint.enable(true, { bufnr = bufnr })
         end
 
-        if client.server_capabilities.documentSymbolProvider then
-          local ft = vim.bo[bufnr].filetype
-          if ft ~= "vue" or client.name == "vue_ls" then
-            require("nvim-navic").attach(client, bufnr)
-          end
-        end
-
         if client.name == "sqls" or client.name == "html" then
           client.server_capabilities.documentFormattingProvider = false
           client.server_capabilities.documentRangeFormattingProvider = false
