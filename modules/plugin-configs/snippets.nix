@@ -37,7 +37,7 @@
       s({ trig = ">>", snippetType = "autosnippet", wordTrig = true }, { t("|> "), i(0) }),
     })
     ls.add_snippets("php", {
-      s("fn", { t("fn ("), i(1, "$arg"), t(") => "), i(1, "$arg"), t(";") }),
+      s("fn", { t("fn ("), i(1, "$arg"), t(") => "), i(2, "$arg"), t(";") }),
     })
     ls.add_snippets("markdown", {
       s({ trig = "alpha", snippetType = "autosnippet" }, { t("󰀫"), i(0) }),

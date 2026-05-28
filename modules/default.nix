@@ -77,15 +77,5 @@
     };
 
     globals.mapleader = " ";
-
-    autoCmd = [
-      {
-        event = [
-          "BufEnter"
-          "WinEnter"
-        ];
-        command = "setlocal cursorline";
-      }
-    ];
   };
 }

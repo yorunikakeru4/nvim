@@ -2,7 +2,7 @@
   programs.nixvim = {
     opts = {
       foldmethod = "expr";
-      foldexpr = "nvim_treesitter#foldexpr()";
+      foldexpr = "v:lua.vim.treesitter.foldexpr()";
       foldlevel = 99;
     };
 

@@ -31,7 +31,7 @@ in {
       vue = prettier;
       markdown = {
         __unkeyed-1 = "prettierd";
-        lsp_fallback = true;
+        lsp_format = "fallback";
       };
       python = {
         __unkeyed-1 = "ruff_format";
@@ -61,7 +61,7 @@ in {
 
         return {
           async = false,
-          lsp_fallback = true,
+          lsp_format = "fallback",
         }
       end
     '';
