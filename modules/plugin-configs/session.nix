@@ -7,6 +7,7 @@
         load_on_setup = true;
         previewer = false;
       };
+      pre_save_cmds = ["NvimTreeClose"];
     };
   };
 
