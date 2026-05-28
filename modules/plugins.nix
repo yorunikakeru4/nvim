@@ -6,7 +6,6 @@
   custom = nvimFlakeInputs.nvim-plugins.packages.${pkgs.stdenv.hostPlatform.system};
 in {
   home.packages = with pkgs; [
-    mercurial
     tree-sitter
   ];
 
@@ -73,15 +72,12 @@ in {
       vim-matchup
       hlargs-nvim
       telescope-fzf-native-nvim
-      fzf-lua
       gx-nvim
       vim-fugitive
       gv-vim
       lazygit-nvim
       nvim-lint
-      cmp-git
       cmp-buffer
-      cmp-cmdline
       cmp-nvim-lsp
       cmp-path
       cmp_luasnip
@@ -90,7 +86,6 @@ in {
       copilot-cmp
       cmp-dotenv
       nix-develop-nvim
-      comment-box-nvim
       outline-nvim
       trouble-nvim
       # data
@@ -98,8 +93,6 @@ in {
       vim-dadbod-ui
       vim-dadbod-completion
       # misc
-      vim-dispatch
-      tabular
       vim-markdown
       neodev-nvim
       nvim-jqx
