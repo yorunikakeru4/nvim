@@ -10,6 +10,7 @@ in {
     home.packages = with pkgs; [
       basedpyright
       ruff
+      python3Packages.debugpy
     ];
 
     programs.nixvim.plugins.lsp.servers = {
@@ -35,5 +36,10 @@ in {
         rootMarkers = ["pyproject.toml" "ruff.toml" ".ruff.toml" ".git"];
       };
     };
+
+    programs.nixvim.extraConfigLua = ''
+      -- nvim-dap-python (debugpy adapter)
+      require("dap-python").setup("python3")
+    '';
   };
 }

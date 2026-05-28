@@ -11,6 +11,7 @@ in {
       rust-analyzer
       clippy
       rustfmt
+      lldb
     ];
 
     programs.nixvim.plugins.lsp.servers.rust_analyzer = {
@@ -49,5 +50,30 @@ in {
         };
       };
     };
+
+    programs.nixvim.extraConfigLua = ''
+      -- lldb adapter for Rust (also reused for C/C++)
+      local dap = require("dap")
+      dap.adapters.lldb = {
+        type = "executable",
+        command = "lldb-dap",
+        name = "lldb",
+      }
+      dap.configurations.rust = {
+        {
+          name = "Launch",
+          type = "lldb",
+          request = "launch",
+          program = function()
+            return vim.fn.input("Executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
+          end,
+          cwd = "''${workspaceFolder}",
+          stopOnEntry = false,
+          args = {},
+        },
+      }
+      dap.configurations.c   = dap.configurations.rust
+      dap.configurations.cpp = dap.configurations.rust
+    '';
   };
 }

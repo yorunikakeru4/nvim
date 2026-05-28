@@ -114,6 +114,10 @@ custom.vim-autoread
       custom.goplements-nvim
       custom.go-tagger-nvim
       custom.vim-php-cs-fixer
+      # dap helpers
+      nvim-dap-virtual-text
+      nvim-dap-go
+      nvim-dap-python
     ];
   };
 }

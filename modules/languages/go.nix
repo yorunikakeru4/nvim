@@ -14,6 +14,7 @@ in {
       gosimports
       gomodifytags
       iferr
+      delve
     ];
 
     programs.nixvim.plugins.lsp.servers = {
@@ -58,6 +59,25 @@ in {
       require("gotests").setup()
 
       -- go-impl.nvim (implement interface, keyed to nf in mappings)
+
+      -- nvim-dap-go (delve adapter for Go)
+      require("dap-go").setup({
+        dap_configurations = {
+          {
+            type = "go",
+            name = "Attach remote",
+            mode = "remote",
+            request = "attach",
+          },
+        },
+        delve = {
+          path = "dlv",
+          initialize_timeout_sec = 20,
+          port = "''${DLV_PORT}",
+          args = {},
+          build_flags = {},
+        },
+      })
     '';
   };
 }
