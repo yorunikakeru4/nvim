@@ -67,7 +67,7 @@ in {
           program = function()
             return vim.fn.input("Executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
           end,
-          cwd = "''${workspaceFolder}",
+          cwd = vim.fn.getcwd(),
           stopOnEntry = false,
           args = {},
         },

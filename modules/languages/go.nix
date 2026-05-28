@@ -73,8 +73,7 @@ in {
         delve = {
           path = "dlv",
           initialize_timeout_sec = 20,
-          port = "''${DLV_PORT}",
-          args = {},
+args = {},
           build_flags = {},
         },
       })
