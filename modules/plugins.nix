@@ -32,8 +32,16 @@ in {
             "yaml"
             "toml"
             "markdown"
+            "markdown_inline"
             "bash"
             "haskell"
+            "python"
+            "nix"
+            "elixir"
+            "c"
+            "cpp"
+            "sql"
+            "php"
           ];
         };
       };
