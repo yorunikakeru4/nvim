@@ -16,11 +16,6 @@ in {
       rootMarkers = [".marksman.toml" ".git"];
     };
 
-    programs.nixvim.globals = {
-      vimtex_view_method = "zathura";
-      vimtex_compiler_method = "latexmk";
-    };
-
     programs.nixvim.extraConfigLua = ''
       -- markdown-plus
       require("markdown-plus").setup({})

@@ -103,7 +103,6 @@ in {
       vim-markdown
       neodev-nvim
       nvim-jqx
-      vimtex
       # language-specific (nixpkgs)
       haskell-scope-highlighting-nvim
       # custom plugins (from nvim-plugins sub-flake)
