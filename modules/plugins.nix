@@ -90,7 +90,6 @@ in {
       vim-dadbod-ui
       vim-dadbod-completion
       # misc
-      neodev-nvim
       nvim-jqx
       # language-specific (nixpkgs)
       haskell-scope-highlighting-nvim

@@ -16,10 +16,6 @@ in {
       rootMarkers = [".luarc.json" ".luarc.jsonc" ".git"];
       settings = {
         diagnostics.globals = ["vim"];
-        workspace = {
-          library.__raw = ''vim.api.nvim_get_runtime_file("", true)'';
-          checkThirdParty = false;
-        };
       };
     };
   };

@@ -44,6 +44,13 @@
           lightbulb.enable = false;
         };
       };
+
+      lazydev = {
+        enable = true;
+        settings.library = [
+          { path = "\${3rd}/luv/library"; words = ["vim%.uv"]; }
+        ];
+      };
     };
 
     extraConfigLua = ''
@@ -58,9 +65,6 @@
 
       -- signup.nvim (signature help)
       require("signup").setup({})
-
-      -- neodev (Lua LSP enhancements)
-      require("neodev").setup({})
     '';
   };
 }
