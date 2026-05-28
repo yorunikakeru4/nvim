@@ -53,9 +53,7 @@ in {
       fidget.enable = true;
       lualine.enable = true;
       indent-blankline.enable = true;
-      colorizer.enable = true;
       flash.enable = true;
-      aerial.enable = true;
       diffview.enable = true;
       undotree.enable = true;
     };
@@ -66,7 +64,6 @@ in {
       gruvbox-material
       rainbow-delimiters-nvim
       vim-illuminate
-      vim-sandwich
       range-highlight-nvim
       nvim-treesitter-textobjects
       vim-matchup
@@ -93,7 +90,6 @@ in {
       vim-dadbod-ui
       vim-dadbod-completion
       # misc
-      vim-markdown
       neodev-nvim
       nvim-jqx
       # language-specific (nixpkgs)
