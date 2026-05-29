@@ -23,7 +23,13 @@ in {
     };
 
     programs.nixvim.extraConfigLua = ''
-      -- haskell-scope-highlighting
+      -- haskell-scope-highlighting (patch nil scope_matches bug upstream)
+      local _hs_ts = require("haskell-scope-highlighting.treesitter")
+      local _orig_caps = _hs_ts.captures_at_point_sorted
+      _hs_ts.captures_at_point_sorted = function(...)
+        local bufnr, matches = _orig_caps(...)
+        return bufnr, matches or {}
+      end
       require("haskell-scope-highlighting").setup({})
     '';
   };
