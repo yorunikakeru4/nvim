@@ -46,6 +46,7 @@ in {
       c = ["clang_format"];
       cpp = ["clang_format"];
       haskell = ["ormolu"];
+      cabal = ["cabal_fmt"];
       sql = {};
       jsonc = {};
     };

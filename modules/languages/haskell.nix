@@ -7,13 +7,13 @@
   cfg = config.nixvimLanguages.haskell;
 in {
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [haskell-language-server ormolu];
+    home.packages = with pkgs; [haskell-language-server ormolu haskellPackages.cabal-fmt];
 
     programs.nixvim.plugins.lsp.servers.hls = {
       enable = true;
       installGhc = false;
       cmd = ["haskell-language-server-wrapper" "--lsp"];
-      filetypes = ["haskell" "lhaskell" "cabal"];
+      filetypes = ["haskell" "lhaskell"];
       rootMarkers = ["*.cabal" "stack.yaml" "cabal.project" "package.yaml" "hie.yaml" ".git"];
       settings.haskell = {
         formattingProvider = "ormolu";
