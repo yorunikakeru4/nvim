@@ -110,7 +110,22 @@
         if has_nix_flake() then
           buf_map(bufnr, "n", "<leader>E", function() run_in_toggleterm("nix run") end)
           buf_map(bufnr, "n", "<leader>B", function() run_in_toggleterm("nix build") end)
-          buf_map(bufnr, "n", "<leader>T", function() run_in_toggleterm("nix flake check") end)
+          if ft == "haskell" then
+            local tool = get_haskell_tool()
+            if tool then
+              buf_map(bufnr, "n", "<leader>T", function()
+                run_in_toggleterm(tool == "stack" and "stack test" or "cabal test")
+              end)
+              buf_map(bufnr, "n", "<leader>I", function()
+                run_in_toggleterm(tool == "stack" and "stack repl" or "cabal repl")
+              end)
+            end
+          else
+            local test_cmd = test_cmds[ft]
+            if test_cmd and has_file_in_project(test_cmd.check) then
+              buf_map(bufnr, "n", "<leader>T", function() run_in_toggleterm(test_cmd.cmd) end)
+            end
+          end
         else
           local run_cmd = run_cmds[ft]
           if run_cmd then
