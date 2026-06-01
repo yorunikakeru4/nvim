@@ -246,12 +246,14 @@
     map("n", "nd", ":Lspsaga goto_definition<CR>")
     map("n", "na", function()
       local is_rust = vim.bo.filetype == "rust"
+      local is_haskell = vim.bo.filetype == "haskell"
       vim.lsp.buf.code_action({
         filter = function(action)
           if action.title:match("Fill") or action.kind == "refactor.rewrite.fillStruct" then return true end
           if is_rust and action.title:match("Implement missing members") then return true end
           if is_rust and action.title:match("Insert explicit type") then return true end
           if is_rust and action.title:match("Fill match arms") then return true end
+          if is_haskell and action.title:match("add signature") then return true end
           return false
         end,
         apply = true,
