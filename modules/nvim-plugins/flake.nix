@@ -2,12 +2,12 @@
   description = "Custom Neovim plugins not available in nixpkgs";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
     hbac-nvim.url = "github:axkirillov/hbac.nvim";
     hbac-nvim.flake = false;
 
-vim-autoread.url = "github:djoshea/vim-autoread";
+    vim-autoread.url = "github:djoshea/vim-autoread";
     vim-autoread.flake = false;
 
     seeker-nvim.url = "github:2kabhishek/seeker.nvim";
@@ -74,7 +74,7 @@ vim-autoread.url = "github:djoshea/vim-autoread";
           ];
         })
         .overrideAttrs (_: {postInstall = "";});
-vim-autoread = mk "vim-autoread" inputs.vim-autoread;
+      vim-autoread = mk "vim-autoread" inputs.vim-autoread;
       seeker-nvim =
         (pkgs.vimUtils.buildVimPlugin {
           pname = "seeker-nvim";
