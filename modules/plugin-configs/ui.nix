@@ -35,21 +35,22 @@
 
     extraConfigLua = ''
       -- cokeline
-      local get_hex = require("cokeline.hlgroups").get_hl_attr
+      local cokeline_colors = {
+        active_bg = "#3c3836",
+        active_fg = "#fabd2f",
+        inactive_bg = "NONE",
+        inactive_fg = "#928374",
+        prefix = "#665c54",
+        close = "#ea6962",
+      }
 
       require("cokeline").setup({
         default_hl = {
           fg = function(buffer)
-            return
-              buffer.is_focused
-              and get_hex("ColorColumn", "bg")
-               or get_hex("Normal", "fg")
+            return buffer.is_focused and cokeline_colors.active_fg or cokeline_colors.inactive_fg
           end,
           bg = function(buffer)
-            return
-              buffer.is_focused
-              and get_hex("Normal", "fg")
-               or get_hex("ColorColumn", "bg")
+            return buffer.is_focused and cokeline_colors.active_bg or cokeline_colors.inactive_bg
           end,
         },
 
@@ -60,17 +61,23 @@
           },
           {
             text = function(buffer) return buffer.unique_prefix end,
-            fg = get_hex("Comment", "fg"),
+            fg = function(buffer)
+              return buffer.is_focused and cokeline_colors.active_fg or cokeline_colors.prefix
+            end,
             italic = true,
           },
           {
             text = function(buffer) return buffer.filename .. " " end,
+            bold = function(buffer) return buffer.is_focused end,
             underline = function(buffer)
               return buffer.is_hovered and not buffer.is_focused
             end,
           },
           {
-            text = "",
+            text = "󰳭",
+            fg = function(buffer)
+              return buffer.is_focused and cokeline_colors.close or cokeline_colors.inactive_fg
+            end,
             on_click = function(_, _, _, _, buffer)
               buffer:delete()
             end,

@@ -15,10 +15,14 @@
 
     -- vim-matchup
     vim.g.matchup_treesitter_stopline = 500
+
+    -- nvim-surround v4: keymaps are no longer configured via setup().
+    vim.keymap.set("x", "s", "<Plug>(nvim-surround-visual)", {
+      desc = "Add a surrounding pair around a visual selection",
+    })
   '';
 
   programs.nixvim.plugins = {
-    nvim-surround.settings.keymaps.visual = "s";
     comment.settings = {
       toggler = {
         line = "<A-q>";

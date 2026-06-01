@@ -5,7 +5,7 @@
     lsp.config("*", {
       capabilities = require("cmp_nvim_lsp").default_capabilities(),
     })
-    lsp.set_log_level("off")
+    lsp.log.set_level("off")
 
     vim.api.nvim_create_autocmd("LspAttach", {
       callback = function(args)
