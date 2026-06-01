@@ -76,10 +76,10 @@ in {
       gruvbox-material
       rainbow-delimiters-nvim
       vim-illuminate
-      range-highlight-nvim
       nvim-treesitter-textobjects
       vim-matchup
       hlargs-nvim
+      nvim-cokeline
       telescope-fzf-native-nvim
       gx-nvim
       vim-fugitive
@@ -107,7 +107,7 @@ in {
       haskell-scope-highlighting-nvim
       # custom plugins (from nvim-plugins sub-flake)
       custom.hbac-nvim
-custom.vim-autoread
+      custom.vim-autoread
       custom.seeker-nvim
       custom.signup-nvim
       custom.markdown-plus-nvim

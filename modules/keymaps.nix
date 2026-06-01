@@ -319,8 +319,8 @@
     map("n", "<leader>ad", "ggdG")
 
     -- Buffer navigation
-    map("n", "<Tab>",   ":BufferNext<CR>")
-    map("n", "<C-Tab>", ":BufferPrevious<CR>")
+    map("n", "<Tab>",   "<cmd>bnext<CR>")
+    map("n", "<C-Tab>", "<cmd>bprevious<CR>")
 
     -- Marks
     map("n", "Mc", "m")
@@ -336,9 +336,15 @@
     map("i", "<C-l>", "<Right>")
 
     -- Buffer tabs
-    map("n", "tc", ":BufferClose<CR>")
-    map("n", "to", ":BufferCloseAllButCurrent<CR>")
-    map("n", "tp", ":BufferPin<CR>")
+    map("n", "tc", "<cmd>bdelete<CR>")
+    map("n", "to", function()
+      local current = vim.api.nvim_get_current_buf()
+      for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+        if buf ~= current and vim.bo[buf].buflisted then
+          pcall(vim.api.nvim_buf_delete, buf, {})
+        end
+      end
+    end)
 
     -- Search
     map("n", ";", "n")

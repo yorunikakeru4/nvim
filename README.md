@@ -74,14 +74,14 @@ nixvimLanguages.go.enable = false;
 | Completion     | nvim-cmp, luasnip, friendly-snippets, copilot-cmp, cmp-dotenv                 |
 | LSP UI         | lspsaga, fidget, lspkind, neogen, signup.nvim (signature help)                |
 | Navigation     | telescope + fzf-native, oil.nvim, nvim-tree, seeker.nvim, outline.nvim, flash |
-| Buffers        | barbar (tabs), hbac (auto-close old buffers, threshold=10)                    |
+| Buffers        | nvim-cokeline (tabs), hbac (auto-close old buffers, threshold=10)             |
 | Git            | gitsigns, lazygit, vim-fugitive, gv.vim, diffview                             |
 | Terminal       | toggleterm (float, horizontal, tab)                                            |
 | Editing        | nvim-autopairs, nvim-surround, comment.nvim, vim-matchup                      |
 | Debug          | nvim-dap + dap-ui + dap-virtual-text                                           |
 | Syntax         | treesitter, rainbow-delimiters, hlargs, vim-illuminate, treesitter-context    |
 | UI             | lualine, indent-blankline, todo-comments, ccc (color preview), startup.nvim   |
-| Misc           | undotree, trouble, nvim-jqx, gx.nvim, vim-autoread, range-highlight           |
+| Misc           | undotree, trouble, nvim-jqx, gx.nvim, vim-autoread                            |
 
 ## Keymaps
 
@@ -183,7 +183,6 @@ nixvimLanguages.go.enable = false;
 | `<C-Tab>`  | Previous buffer         |
 | `tc`       | Close buffer            |
 | `to`       | Close all but current   |
-| `tp`       | Pin buffer              |
 
 ### Terminal
 

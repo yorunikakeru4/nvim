@@ -46,37 +46,37 @@ in {
     };
 
     programs.nixvim.extraConfigLua = ''
-      -- gopher.nvim
-      require("gopher").setup({})
+            -- gopher.nvim
+            require("gopher").setup({})
 
-      -- goplements (show interface implementations)
-      require("goplements").setup({})
+            -- goplements (show interface implementations)
+            require("goplements").setup({})
 
-      -- go-tagger (struct tag generator)
-      require("go-tagger").setup({ skip_private = true })
+            -- go-tagger (struct tag generator)
+            require("go-tagger").setup({ skip_private = true })
 
-      -- gotests.nvim
-      require("gotests").setup()
+            -- gotests.nvim
+            require("gotests").setup()
 
-      -- go-impl.nvim (implement interface, keyed to nf in mappings)
+            -- go-impl.nvim (implement interface, keyed to nf in mappings)
 
-      -- nvim-dap-go (delve adapter for Go)
-      require("dap-go").setup({
-        dap_configurations = {
-          {
-            type = "go",
-            name = "Attach remote",
-            mode = "remote",
-            request = "attach",
-          },
-        },
-        delve = {
-          path = "dlv",
-          initialize_timeout_sec = 20,
-args = {},
-          build_flags = {},
-        },
-      })
+            -- nvim-dap-go (delve adapter for Go)
+            require("dap-go").setup({
+              dap_configurations = {
+                {
+                  type = "go",
+                  name = "Attach remote",
+                  mode = "remote",
+                  request = "attach",
+                },
+              },
+              delve = {
+                path = "dlv",
+                initialize_timeout_sec = 20,
+      args = {},
+                build_flags = {},
+              },
+            })
     '';
   };
 }
