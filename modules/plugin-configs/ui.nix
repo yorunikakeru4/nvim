@@ -12,7 +12,6 @@
       render-markdown = {
         enable = true;
         settings = {
-          conceal = true;
           latex = {
             enabled = false;
           };
@@ -34,6 +33,8 @@
     };
 
     extraConfigLua = ''
+      require("render-markdown.state").config.conceal = nil
+
       -- cokeline
       local cokeline_colors = {
         active_bg = "#3c3836",

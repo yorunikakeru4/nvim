@@ -14,6 +14,7 @@ in {
       gosimports
       gomodifytags
       iferr
+      impl
       delve
     ];
 

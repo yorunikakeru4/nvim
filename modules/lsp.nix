@@ -37,10 +37,7 @@
         end
 
         if client.server_capabilities.codeLensProvider then
-          vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
-            buffer = bufnr,
-            callback = lsp.codelens.refresh,
-          })
+          lsp.codelens.enable(true, { bufnr = bufnr })
         end
       end,
     })
