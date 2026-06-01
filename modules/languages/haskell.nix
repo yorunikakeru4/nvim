@@ -7,7 +7,7 @@
   cfg = config.nixvimLanguages.haskell;
 in {
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [haskell-language-server ormolu haskellPackages.cabal-fmt];
+    home.packages = with pkgs; [haskell-language-server fourmolu haskellPackages.cabal-fmt];
 
     programs.nixvim.plugins.lsp.servers.hls = {
       enable = true;
@@ -16,7 +16,7 @@ in {
       filetypes = ["haskell" "lhaskell"];
       rootMarkers = ["*.cabal" "stack.yaml" "cabal.project" "package.yaml" "hie.yaml" ".git"];
       settings.haskell = {
-        formattingProvider = "ormolu";
+        formattingProvider = "fourmolu";
         checkProject = true;
         plugin.stan.globalOn = true;
       };

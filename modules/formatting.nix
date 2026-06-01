@@ -45,13 +45,14 @@ in {
       };
       c = ["clang_format"];
       cpp = ["clang_format"];
-      haskell = ["ormolu"];
+      haskell = ["fourmolu"];
       cabal = ["cabal_fmt"];
       sql = {};
       jsonc = {};
     };
 
     formatters.clang_format.prepend_args = ["--style=file" "--fallback-style=none"];
+    formatters.fourmolu.prepend_args = ["--indentation=4"];
 
     format_on_save = ''
       function(bufnr)
