@@ -274,6 +274,16 @@
         apply = true,
       })
     end)
+    map("n", "ne", function()
+      local is_haskell = vim.bo.filetype == "haskell"
+      vim.lsp.buf.code_action({
+        filter = function(action)
+          if is_haskell and action.title:match("Export") then return true end
+          return false
+        end,
+        apply = true,
+      })
+    end)
     map("n", "ng", ":lua require('neogen').generate()<CR>")
 
     -- Smart ci
