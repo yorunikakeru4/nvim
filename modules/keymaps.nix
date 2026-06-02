@@ -200,8 +200,11 @@
     map("x", "<A-d>", "y`>o<Esc>pgv")
     map("v", "<A-k>", ":m '<-2<CR>gv=gv")
     map("v", "<A-j>", ":m '>+1<CR>gv=gv")
+
     map("v", "<A-l>", ">gv")
     map("v", "<A-h>", "<gv")
+    map("n", "<A-l>", ">gv")
+    map("n", "<A-h>", "<gv")
 
     -- Git
     map("n", "<leader>gs", "<cmd>Gitsigns diffthis<CR>")
