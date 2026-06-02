@@ -4,6 +4,14 @@
   ...
 }: let
   custom = nvimFlakeInputs.nvim-plugins.packages.${pkgs.stdenv.hostPlatform.system};
+  copilot-cmp-patched = pkgs.vimPlugins.copilot-cmp.overrideAttrs (old: {
+    postPatch =
+      (old.postPatch or "")
+      + ''
+        substituteInPlace lua/copilot_cmp/source.lua \
+          --replace-fail 'self.client.is_stopped()' 'self.client:is_stopped()'
+      '';
+  });
 in {
   home.packages = with pkgs; [
     tree-sitter
@@ -92,7 +100,7 @@ in {
       cmp_luasnip
       friendly-snippets
       copilot-lua
-      copilot-cmp
+      copilot-cmp-patched
       cmp-dotenv
       nix-develop-nvim
       outline-nvim
