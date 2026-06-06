@@ -74,18 +74,6 @@
               return buffer.is_hovered and not buffer.is_focused
             end,
           },
-          {
-            text = "󰳭",
-            fg = function(buffer)
-              return buffer.is_focused and cokeline_colors.close or cokeline_colors.inactive_fg
-            end,
-            on_click = function(_, _, _, _, buffer)
-              buffer:delete()
-            end,
-          },
-          {
-            text = " ",
-          },
         },
       })
 
