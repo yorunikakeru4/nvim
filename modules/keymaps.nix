@@ -203,9 +203,8 @@
 
     map("v", "<A-l>", ">gv")
     map("v", "<A-h>", "<gv")
-    map("n", "<A-l>", ">gv")
-    map("n", "<A-h>", "<gv")
-
+    map("n", "<A-l>", ">>")
+    map("n", "<A-h>", "<<")
     -- Git
     map("n", "<leader>gs", "<cmd>Gitsigns diffthis<CR>")
     map("n", "<leader>gh", "<cmd>GV<CR>")
