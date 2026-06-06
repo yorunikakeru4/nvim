@@ -60,6 +60,22 @@
         set(0, "FidgetGroup",    { fg = "#de254e" })
         set(0, "FidgetIcon",     { fg = "#a9b665" })
         set(0, "FidgetNormal",   { fg = "#d8a657" })
+
+        local function add_italic(group)
+          local hl = vim.api.nvim_get_hl(0, { name = group, link = false })
+          hl.italic = true
+          set(0, group, hl)
+        end
+        local italic_groups = {
+          "@keyword", "@keyword.return", "@keyword.function",
+          "@keyword.operator", "@keyword.import", "@keyword.type",
+          "@keyword.modifier", "@keyword.repeat", "@keyword.exception",
+          "@keyword.conditional",
+          "@variable", "@variable.builtin",
+          "@function", "@function.call", "@function.builtin",
+          "@function.method", "@function.method.call",
+        }
+        for _, g in ipairs(italic_groups) do add_italic(g) end
       end
 
       vim.api.nvim_create_autocmd("ColorScheme", {

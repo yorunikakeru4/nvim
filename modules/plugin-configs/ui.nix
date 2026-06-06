@@ -79,7 +79,7 @@
 
       -- hlargs
       require("hlargs").setup({
-        color = "#399CA1",
+        color = "#b8bb26",
         highlight = {},
         excluded_filetypes = {},
         paint_arg_declarations = true,
@@ -92,7 +92,7 @@
           debounce = { partial_parse = 3, partial_insert_mode = 100, total_parse = 700, slow_parse = 5000 },
         },
       })
-      vim.api.nvim_set_hl(0, "Hlargs",       { fg = "#399CA1", italic = true })
+      vim.api.nvim_set_hl(0, "Hlargs",       { fg = "#b8bb26", italic = true })
       vim.api.nvim_set_hl(0, "HlargsUnused", { fg = "#9A9EA5", italic = true })
 
       -- seeker / telescope transparent picker
