@@ -97,11 +97,41 @@
     extraConfigLua = ''
       -- outline
       require("outline").setup({
-        outline_window = { position = "right", relative_width = true, width = 40,
-                           show_numbers = false, show_relative_numbers = true },
+        outline_window = { position = "right", relative_width = false, width = 40,
+                           focus_on_open = true, show_numbers = false,
+                           show_relative_numbers = true },
         preview_window = { auto_preview = true },
         symbol_folding = { autofold_depth = nil },
       })
+
+      local trouble = require("trouble")
+      trouble.setup({
+        auto_close = false,
+        auto_open = false,
+        auto_preview = true,
+        auto_refresh = true,
+        focus = true,
+        follow = true,
+        win = { position = "right", size = 40 },
+        modes = {
+          diagnostics = {
+            groups = {
+              { "directory" },
+              { "filename", format = "{file_icon} {basename} {count}" },
+            },
+          },
+        },
+      })
+
+      function _G.toggle_outline_sidebar()
+        trouble.close()
+        vim.cmd("Outline")
+      end
+
+      function _G.toggle_trouble_sidebar()
+        vim.cmd("OutlineClose")
+        trouble.toggle({ mode = "diagnostics", focus = true })
+      end
 
       -- seeker.nvim
       require("seeker").setup({

@@ -144,6 +144,7 @@ nixvimLanguages.go.enable = false;
 | `<leader>e` | NvimTree           |
 | `<leader>u` | Undotree           |
 | `<leader>o` | Outline            |
+| `<leader>t` | Trouble diagnostics |
 | `<leader>l` | Oil (file browser) |
 
 ### Find (Telescope)

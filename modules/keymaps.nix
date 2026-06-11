@@ -175,7 +175,8 @@
     -- UI toggles
     map("n", "<leader>e", ":NvimTreeToggle<CR>")
     map("n", "<leader>u", "<cmd>UndotreeToggle<CR>")
-    map("n", "<leader>o", "<cmd>Outline<CR>")
+    map("n", "<leader>o", function() _G.toggle_outline_sidebar() end)
+    map("n", "<leader>t", function() _G.toggle_trouble_sidebar() end)
     map("n", "<leader>l", ":Oil<CR>")
 
     -- Replace
