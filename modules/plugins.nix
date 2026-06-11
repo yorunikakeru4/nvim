@@ -86,7 +86,6 @@ in {
       gruvbox-material
       rainbow-delimiters-nvim
       vim-illuminate
-      nvim-treesitter-textobjects
       vim-matchup
       hlargs-nvim
       nvim-cokeline
