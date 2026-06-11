@@ -69,18 +69,6 @@
       url = "github:stephpy/vim-php-cs-fixer";
       flake = false;
     };
-
-    telegram-nvim = {
-      url = "github:ChuYanLon/telegram.nvim";
-      flake = false;
-    };
-
-    # pnpm-lock.yaml -> node_modules, hashes taken from lockfile integrity
-    # (fork of nzbr/pnpm2nix-nzbr with lockfile v9 support, PR #40)
-    pnpm2nix = {
-      url = "github:wrvsrx/pnpm2nix-nzbr/adapt-to-v9";
-      flake = false;
-    };
   };
 
   outputs = inputs @ {
@@ -99,17 +87,6 @@
         .overrideAttrs (_: {postInstall = "";});
 
       pnpm2nix = pkgs.callPackage "${inputs.pnpm2nix}/derivation.nix" {};
-
-      # node_modules for the telegram.nvim backend (tdl/express/ws + tsx),
-      # resolved offline from the plugin's pnpm-lock.yaml
-      telegramNodeModules =
-        (pnpm2nix.mkPnpmPackage {
-          src = inputs.telegram-nvim;
-          # lockfile is v9; pkgs.pnpm (11.x) re-resolves optional platform deps
-          # (esbuild binaries) over the network, which the sandbox blocks (EAI_AGAIN)
-          pnpm = pkgs.pnpm_9;
-        })
-        .nodeModules;
     in {
       packages = {
         copilot-lua = mk "copilot-lua" inputs.copilot-lua;
@@ -151,18 +128,6 @@
         goplements-nvim = mk "goplements-nvim" inputs.goplements-nvim;
         go-tagger-nvim = mk "go-tagger-nvim" inputs.go-tagger-nvim;
         vim-php-cs-fixer = mk "vim-php-cs-fixer" inputs.vim-php-cs-fixer;
-        # Telegram client: lua frontend + Node backend started as `npx tsx`.
-        # node_modules linked into the plugin dir so the backend runs from the store.
-        telegram-nvim =
-          (pkgs.vimUtils.buildVimPlugin {
-            pname = "telegram-nvim";
-            src = inputs.telegram-nvim;
-            version = inputs.telegram-nvim.shortRev or "unknown";
-            postPatch = ''
-              ln -s ${telegramNodeModules}/node_modules node_modules
-            '';
-          })
-          .overrideAttrs (_: {postInstall = "";});
       };
     });
 }

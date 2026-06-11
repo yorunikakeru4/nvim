@@ -18,14 +18,6 @@
       url = "path:./modules/nvim-plugins";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # telegram.nvim requires TDLib >= 1.8.64; nixpkgs ships 1.8.63.
-    # Tracks master (TDLib does not tag minor versions); pinned via flake.lock,
-    # bump with `nix flake update tdlib-src`.
-    tdlib-src = {
-      url = "github:tdlib/td";
-      flake = false;
-    };
   };
 
   outputs = inputs @ {

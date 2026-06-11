@@ -82,24 +82,24 @@ All languages are enabled by default. Disable via `nixvimLanguages.<lang>.enable
 nixvimLanguages.go.enable = false;
 ```
 
-| Language   | LSP                             | Formatter                           | Linter        | Extra                                       |
-| ---------- | ------------------------------- | ----------------------------------- | ------------- | ------------------------------------------- |
-| Go         | gopls, golangci-lint-langserver | goimports + gofmt                   | golangci-lint | gopher, gotests, go-impl, goplements, delve |
-| Rust       | rust-analyzer                   | rustfmt                             | clippy        | crates.nvim, lldb DAP                       |
-| Python     | pyright / pylsp                 | ruff_format + ruff_organize_imports | —             | nvim-dap-python                             |
-| Nix        | nil / nixd                      | alejandra                           | —             | —                                           |
-| Lua        | lua_ls                          | stylua                              | —             | lazydev                                     |
-| PHP        | phpactor / intelephense         | php-cs-fixer                        | —             | vim-php-cs-fixer                            |
-| Elixir     | elixirls                        | mix format                          | —             | —                                           |
-| C/C++      | clangd                          | clang-format                        | —             | lldb DAP, switch header/source              |
-| Haskell    | hls                             | ormolu                              | —             | haskell-scope-highlighting                  |
-| Markdown   | —                               | prettierd                           | proselint     | render-markdown, markdown-plus              |
-| SQL        | sqls                            | —                                   | —             | vim-dadbod, vim-dadbod-ui                   |
-| Shell      | bashls                          | shfmt                               | shellcheck    | —                                           |
-| Docker     | dockerls                        | —                                   | —             | —                                           |
-| YAML       | yaml-language-server            | —                                   | —             | —                                           |
-| TOML       | taplo                           | taplo                               | —             | —                                           |
-| Just       | —                               | just                                | —             | —                                           |
+| Language | LSP                             | Formatter                           | Linter        | Extra                                       |
+| -------- | ------------------------------- | ----------------------------------- | ------------- | ------------------------------------------- |
+| Go       | gopls, golangci-lint-langserver | goimports + gofmt                   | golangci-lint | gopher, gotests, go-impl, goplements, delve |
+| Rust     | rust-analyzer                   | rustfmt                             | clippy        | crates.nvim, lldb DAP                       |
+| Python   | pyright / pylsp                 | ruff_format + ruff_organize_imports | —             | nvim-dap-python                             |
+| Nix      | nil / nixd                      | alejandra                           | —             | —                                           |
+| Lua      | lua_ls                          | stylua                              | —             | lazydev                                     |
+| PHP      | phpactor / intelephense         | php-cs-fixer                        | —             | vim-php-cs-fixer                            |
+| Elixir   | elixirls                        | mix format                          | —             | —                                           |
+| C/C++    | clangd                          | clang-format                        | —             | lldb DAP, switch header/source              |
+| Haskell  | hls                             | ormolu                              | —             | haskell-scope-highlighting                  |
+| Markdown | —                               | prettierd                           | proselint     | render-markdown, markdown-plus              |
+| SQL      | sqls                            | —                                   | —             | vim-dadbod, vim-dadbod-ui                   |
+| Shell    | bashls                          | shfmt                               | shellcheck    | —                                           |
+| Docker   | dockerls                        | —                                   | —             | —                                           |
+| YAML     | yaml-language-server            | —                                   | —             | —                                           |
+| TOML     | taplo                           | taplo                               | —             | —                                           |
+| Just     | —                               | just                                | —             | —                                           |
 
 ## Plugins
 
@@ -117,7 +117,6 @@ nixvimLanguages.go.enable = false;
 | Syntax     | treesitter, rainbow-delimiters, hlargs, vim-illuminate, treesitter-context    |
 | UI         | lualine, indent-blankline, todo-comments, ccc (color preview), startup.nvim   |
 | Misc       | undotree, trouble, nvim-jqx, gx.nvim, vim-autoread                            |
-| Chat       | telegram.nvim (Telegram client, TDLib + Node backend)                         |
 
 ## Keymaps
 
@@ -140,13 +139,13 @@ nixvimLanguages.go.enable = false;
 
 ### UI toggles
 
-| Key         | Action             |
-| ----------- | ------------------ |
-| `<leader>e` | NvimTree           |
-| `<leader>u` | Undotree           |
-| `<leader>o` | Outline            |
+| Key         | Action              |
+| ----------- | ------------------- |
+| `<leader>e` | NvimTree            |
+| `<leader>u` | Undotree            |
+| `<leader>o` | Outline             |
 | `<leader>t` | Trouble diagnostics |
-| `<leader>l` | Oil (file browser) |
+| `<leader>l` | Oil (file browser)  |
 
 ### Find (Telescope)
 
@@ -351,30 +350,6 @@ Mappings are set per-buffer based on filetype and detected project files (`flake
 | ----------- | --------------------------- |
 | `?`         | Toggle help                 |
 | `<leader>d` | Change root to current node |
-
-### Telegram
-
-`<leader>tg` toggles the panel (`:Tg`). First run asks for phone + code (TDLib auth).
-
-Inside the chat panel:
-
-| Key    | Action                          |
-| ------ | ------------------------------- |
-| `i`    | Compose message (input editor)  |
-| `<CR>` | Reply to / jump to message      |
-| `e`    | Edit own message                |
-| `d`    | Delete / revoke message         |
-| `f`    | Forward message                 |
-| `r`    | React (emoji picker)            |
-| `p`    | Pin / unpin message             |
-| `s`    | Save to Favorites               |
-| `yy`   | Copy message text               |
-| `c`    | Open DM with sender             |
-| `G`    | Refresh, jump to bottom         |
-| `@`    | Tool picker (`:TgTool`)         |
-| `?`    | Toggle help                     |
-
-Commands: `:Tg` toggle, `:TgSend <text>` send to current chat, `:TgLogout` clear auth.
 
 ## Settings
 

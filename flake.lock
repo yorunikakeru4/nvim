@@ -241,10 +241,8 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "pnpm2nix": "pnpm2nix",
         "seeker-nvim": "seeker-nvim",
         "signup-nvim": "signup-nvim",
-        "telegram-nvim": "telegram-nvim",
         "vim-autoread": "vim-autoread",
         "vim-highlighturl": "vim-highlighturl",
         "vim-php-cs-fixer": "vim-php-cs-fixer"
@@ -259,30 +257,12 @@
       },
       "parent": []
     },
-    "pnpm2nix": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1717937937,
-        "narHash": "sha256-bKoHjG5P15vCVpDndIXFfoJC65XhrBPQ9GWcXtXNuDA=",
-        "owner": "wrvsrx",
-        "repo": "pnpm2nix-nzbr",
-        "rev": "a2d285ad5718cb202f45e98a4f839a5b2608c4b1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "wrvsrx",
-        "ref": "adapt-to-v9",
-        "repo": "pnpm2nix-nzbr",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
-        "nvim-plugins": "nvim-plugins",
-        "tdlib-src": "tdlib-src"
+        "nvim-plugins": "nvim-plugins"
       }
     },
     "seeker-nvim": {
@@ -344,38 +324,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "tdlib-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1779117169,
-        "narHash": "sha256-H6R959XVkMB9OVAynRvBYB53hzUPKY0Us+HkbiuPZN0=",
-        "owner": "tdlib",
-        "repo": "td",
-        "rev": "e0943d068ce90b5010f1aea946e6901e25b43bf6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "tdlib",
-        "repo": "td",
-        "type": "github"
-      }
-    },
-    "telegram-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1780884418,
-        "narHash": "sha256-ByRa5BWekVhMe/Y7B2qH6XOaMgXr+EffdkX9V6AfR0g=",
-        "owner": "ChuYanLon",
-        "repo": "telegram.nvim",
-        "rev": "10d9b3c40af9a7e09fc015a2cd429a12fa16706a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ChuYanLon",
-        "repo": "telegram.nvim",
         "type": "github"
       }
     },
