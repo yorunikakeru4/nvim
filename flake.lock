@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "copilot-lua": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1781185194,
+        "narHash": "sha256-xjdTysyt7BMb8a9c2HPQN85EujhQv9ZCQ87yWHjELls=",
+        "owner": "zbirenbaum",
+        "repo": "copilot.lua",
+        "rev": "dada2f90220861d6e9d30eca6a3997cf5d0c9936",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zbirenbaum",
+        "repo": "copilot.lua",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -18,6 +34,24 @@
       "original": {
         "owner": "hercules-ci",
         "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems_2"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
         "type": "github"
       }
     },
@@ -141,11 +175,11 @@
     "markdown-plus-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1779688956,
-        "narHash": "sha256-yHRFsjJfwbmFEVWbhxQ/Jmh4LpSP10hQeTsbXYKK4Fg=",
+        "lastModified": 1780980269,
+        "narHash": "sha256-KWi6VR8XKZwGh8OVdmUyhNsef9I2mdmWU1KJksUW1ME=",
         "owner": "yousefhadder",
         "repo": "markdown-plus.nvim",
-        "rev": "54550db5a4b722f7c597828b8fa8f16945cf1b75",
+        "rev": "14e628d39abe0ee28d2059c1fedc456511e52eab",
         "type": "github"
       },
       "original": {
@@ -195,6 +229,8 @@
     },
     "nvim-plugins": {
       "inputs": {
+        "copilot-lua": "copilot-lua",
+        "flake-utils": "flake-utils",
         "go-impl-nvim": "go-impl-nvim",
         "go-tagger-nvim": "go-tagger-nvim",
         "gopher-nvim": "gopher-nvim",
@@ -262,6 +298,21 @@
       }
     },
     "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_2": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",

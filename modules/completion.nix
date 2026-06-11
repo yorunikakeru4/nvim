@@ -7,7 +7,6 @@
       Variable = "󰀫",
       Field = "󰀻",
       Class = "󰠱",
-      Copilot = "",
       Interface = "󰜰",
       Text = "󰉿",
       Snippet = "󰳗",
@@ -39,7 +38,6 @@
           end
           local source_label = ({
             nvim_lsp = "[LSP]",
-            copilot = "[AI]",
             luasnip = "[Snip]",
             path = "[Path]",
             fillstruct = "[Go]",
@@ -58,12 +56,6 @@
       sorting = {
         priority_weight = 1.5,
         comparators = {
-          function(entry1, entry2)
-            local priority = { copilot = 2}
-            local p1 = priority[entry1.source.name] or 0
-            local p2 = priority[entry2.source.name] or 0
-            if p1 ~= p2 then return p1 > p2 end
-          end,
           compare.offset, compare.exact, compare.score, compare.recently_used,
           compare.locality, compare.kind, compare.sort_text, compare.length, compare.order,
         },
@@ -104,7 +96,6 @@
       },
       sources = {
         { name = "nvim_lsp", group_index = 2, priority = 2500 },
-        { name = "copilot",  group_index = 2},
         { name = "luasnip",  group_index = 2},
         { name = "fillstruct" },
         { name = "path",     group_index = 2 },
@@ -156,6 +147,5 @@
     vim.api.nvim_set_hl(0, "CmpItemKindFolder",        { fg = g.yellow, bg = "NONE" })
     vim.api.nvim_set_hl(0, "CmpItemKindText",          { fg = g.fg_dim, bg = "NONE" })
     vim.api.nvim_set_hl(0, "CmpItemKindColor",         { fg = g.aqua,   bg = "NONE" })
-    vim.api.nvim_set_hl(0, "CmpItemKindCopilot",       { fg = "#6CC644", bg = "NONE" })
   '';
 }

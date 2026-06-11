@@ -57,15 +57,6 @@
     };
 
     extraConfigLua = ''
-      -- copilot
-      vim.defer_fn(function()
-        require("copilot").setup({
-          suggestion = { enabled = true },
-          panel      = { enabled = true },
-        })
-      end, 100)
-      require("copilot_cmp").setup()
-
       -- signup.nvim (signature help)
       require("signup").setup({})
     '';

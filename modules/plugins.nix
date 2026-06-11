@@ -4,16 +4,9 @@
   ...
 }: let
   custom = nvimFlakeInputs.nvim-plugins.packages.${pkgs.stdenv.hostPlatform.system};
-  copilot-cmp-patched = pkgs.vimPlugins.copilot-cmp.overrideAttrs (old: {
-    postPatch =
-      (old.postPatch or "")
-      + ''
-        substituteInPlace lua/copilot_cmp/source.lua \
-          --replace-fail 'self.client.is_stopped()' 'self.client:is_stopped()'
-      '';
-  });
 in {
   home.packages = with pkgs; [
+    nodejs_22
     tree-sitter
   ];
 
@@ -55,6 +48,15 @@ in {
       };
       lsp.enable = true;
       cmp.enable = true;
+      copilot-lua = {
+        enable = true;
+        package = custom.copilot-lua;
+        callSetup = false;
+      };
+      copilot-lsp = {
+        enable = true;
+        settings.nes.move_count_threshold = 3;
+      };
       luasnip.enable = true;
       conform-nvim.enable = true;
       telescope.enable = true;
@@ -99,8 +101,6 @@ in {
       cmp-path
       cmp_luasnip
       friendly-snippets
-      copilot-lua
-      copilot-cmp-patched
       cmp-dotenv
       nix-develop-nvim
       outline-nvim
