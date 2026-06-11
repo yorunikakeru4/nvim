@@ -163,9 +163,6 @@
       end,
     })
 
-    -- Format
-    map("n", "<leader>F", function() vim.lsp.buf.format({ async = true }) end)
-
     -- Motion
     map("n", "q", "%") map("v", "q", "%")
     map("n", "L", "$") map("v", "L", "$")
