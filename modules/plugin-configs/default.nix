@@ -1,6 +1,7 @@
 {
   imports = [
     ./core.nix
+    ./keystroke.nix
     ./navigation.nix
     ./snippets.nix
     ./statusline.nix

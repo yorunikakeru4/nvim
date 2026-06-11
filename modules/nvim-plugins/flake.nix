@@ -10,6 +10,11 @@
       flake = false;
     };
 
+    keystroke-nvim = {
+      url = "github:jerrywang1981/keystroke.nvim";
+      flake = false;
+    };
+
     hbac-nvim = {
       url = "github:axkirillov/hbac.nvim";
       flake = false;
@@ -90,6 +95,7 @@
     in {
       packages = {
         copilot-lua = mk "copilot-lua" inputs.copilot-lua;
+        keystroke-nvim = mk "keystroke-nvim" inputs.keystroke-nvim;
         hbac-nvim =
           (pkgs.vimUtils.buildVimPlugin {
             pname = "hbac-nvim";
