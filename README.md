@@ -358,7 +358,7 @@ Mappings are set per-buffer based on filetype and detected project files (`flake
 - `undofile = true` — persistent undo
 - `swapfile = false`
 - `ignorecase` + `smartcase`
-- `spelllang = ["en" "ru"]`
+- Spell checking enabled for English and Russian
 - `timeoutlen = 800`
 - Arrow keys disabled in normal and insert mode
 - Auto-format on save for all supported filetypes (JSONC and SQL skipped)

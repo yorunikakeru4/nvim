@@ -71,6 +71,7 @@
       fillchars = {eob = " ";};
       completeopt = ["menu" "menuone" "noselect"];
       grepprg = "rg --vimgrep";
+      spell = true;
       spelllang = ["en" "ru"];
       shell = "fish";
     };
