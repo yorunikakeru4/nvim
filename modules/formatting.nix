@@ -5,9 +5,9 @@
     stop_after_first = true;
   };
 in {
-  home.packages = with pkgs; [
-    prettier
-    prettierd
+  home.packages = [
+    pkgs.prettier
+    pkgs.prettierd
   ];
 
   programs.nixvim.plugins.conform-nvim.settings = {
