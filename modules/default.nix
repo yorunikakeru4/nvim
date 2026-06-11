@@ -13,6 +13,7 @@
     ./treesitter.nix
     ./theme.nix
     ./keymaps.nix
+    ./switchboard.nix
     ./plugin-configs
     ./languages/go.nix
     ./languages/rust.nix

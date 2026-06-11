@@ -74,6 +74,11 @@
       url = "github:stephpy/vim-php-cs-fixer";
       flake = false;
     };
+
+    switchboard-nvim = {
+      url = "github:karnull/switchboard.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {
@@ -142,6 +147,7 @@
         goplements-nvim = mk "goplements-nvim" inputs.goplements-nvim;
         go-tagger-nvim = mk "go-tagger-nvim" inputs.go-tagger-nvim;
         vim-php-cs-fixer = mk "vim-php-cs-fixer" inputs.vim-php-cs-fixer;
+        switchboard-nvim = mk "switchboard-nvim" inputs.switchboard-nvim;
       };
     });
 }

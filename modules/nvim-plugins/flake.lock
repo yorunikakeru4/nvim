@@ -193,6 +193,7 @@
         "nixpkgs": "nixpkgs",
         "seeker-nvim": "seeker-nvim",
         "signup-nvim": "signup-nvim",
+        "switchboard-nvim": "switchboard-nvim",
         "vim-autoread": "vim-autoread",
         "vim-highlighturl": "vim-highlighturl",
         "vim-php-cs-fixer": "vim-php-cs-fixer"
@@ -227,6 +228,22 @@
       "original": {
         "owner": "Dan7h3x",
         "repo": "signup.nvim",
+        "type": "github"
+      }
+    },
+    "switchboard-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1781180104,
+        "narHash": "sha256-Qmm+ZaLZKZM/xDTX3KX5a0yoijwmJfFtYsZ0bmp4zeU=",
+        "owner": "karnull",
+        "repo": "switchboard.nvim",
+        "rev": "494927a117ca3453b24374405b4764a25a5862d0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "karnull",
+        "repo": "switchboard.nvim",
         "type": "github"
       }
     },
