@@ -13,8 +13,6 @@ in {
     python = mkLang "Python editor support";
     lua = mkLang "Lua editor support";
     nix = mkLang "Nix editor support";
-    typescript = mkLang "TypeScript editor support";
-    vue = mkLang "Vue editor support";
     php = mkLang "PHP editor support";
     elixir = mkLang "Elixir editor support";
     cpp = mkLang "C and C++ editor support";

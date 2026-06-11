@@ -17,7 +17,6 @@
     ./languages/go.nix
     ./languages/rust.nix
     ./languages/python.nix
-    ./languages/web.nix
     ./languages/nix.nix
     ./languages/lua.nix
     ./languages/php.nix

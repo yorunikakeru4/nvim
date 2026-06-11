@@ -87,8 +87,6 @@ nixvimLanguages.go.enable = false;
 | Go         | gopls, golangci-lint-langserver | goimports + gofmt                   | golangci-lint | gopher, gotests, go-impl, goplements, delve |
 | Rust       | rust-analyzer                   | rustfmt                             | clippy        | crates.nvim, lldb DAP                       |
 | Python     | pyright / pylsp                 | ruff_format + ruff_organize_imports | —             | nvim-dap-python                             |
-| TypeScript | ts_ls                           | prettierd / prettier                | —             | —                                           |
-| Vue        | volar                           | prettier                            | —             | —                                           |
 | Nix        | nil / nixd                      | alejandra                           | —             | —                                           |
 | Lua        | lua_ls                          | stylua                              | —             | lazydev                                     |
 | PHP        | phpactor / intelephense         | php-cs-fixer                        | —             | vim-php-cs-fixer                            |

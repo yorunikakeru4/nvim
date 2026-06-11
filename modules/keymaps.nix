@@ -49,7 +49,6 @@
     local run_cmds = {
       python = "python3 %",
       javascript = "node %",
-      typescript = "node %",
       php = "php %",
       go = "go run %",
       cpp = function()
@@ -79,7 +78,6 @@
     local test_cmds = {
       python = { cmd = "pytest",       check = { "pytest.ini", "tests" } },
       javascript = { cmd = "npm test", check = { "package.json" } },
-      typescript = { cmd = "npm test", check = { "package.json" } },
       go = { cmd = "go test ./...",    check = { "go.mod" } },
       php = { cmd = "phpunit",         check = { "phpunit.xml", "tests" } },
       rust = { cmd = "cargo test",     check = { "Cargo.toml" } },

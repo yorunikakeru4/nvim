@@ -1,10 +1,15 @@
-{...}: let
+{pkgs, ...}: let
   prettier = {
     __unkeyed-1 = "prettierd";
     __unkeyed-2 = "prettier";
     stop_after_first = true;
   };
 in {
+  home.packages = with pkgs; [
+    prettier
+    prettierd
+  ];
+
   programs.nixvim.plugins.conform-nvim.settings = {
     formatters_by_ft = {
       sh = ["shfmt"];
@@ -22,13 +27,10 @@ in {
       };
       javascriptreact = prettier;
       javascript = prettier;
-      typescript = prettier;
-      typescriptreact = prettier;
       css = prettier;
       html = prettier;
       json = prettier;
       toml = ["taplo"];
-      vue = prettier;
       markdown = {
         __unkeyed-1 = "prettierd";
         lsp_format = "fallback";
