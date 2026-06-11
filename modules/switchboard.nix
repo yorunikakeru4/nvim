@@ -66,19 +66,9 @@
     })
 
     local sb_opts = { noremap = true, silent = true }
-    vim.keymap.set("n", "<leader>E", ":Switchboard split run<CR>", sb_opts)
-    vim.keymap.set("n", "<leader>T", ":Switchboard split test<CR>", sb_opts)
-    vim.keymap.set("n", "<leader>B", ":Switchboard split build<CR>", sb_opts)
-    vim.keymap.set("n", "<leader>I", ":Switchboard split repl<CR>", sb_opts)
-    -- Depracted: overlay/background modes are less discoverable and don't support placeholders, so not worth the extra complexity in keymaps.
-    -- C/C++ source<->header switch (filetype-local, not a runner command)
-    --[[ vim.api.nvim_create_autocmd("FileType", {
-      pattern = { "c", "cpp", "objc", "objcpp" },
-      callback = function(ev)
-        vim.keymap.set("n", "<leader>rh", function()
-          vim.cmd("ClangdSwitchSourceHeader")
-        end, vim.tbl_extend("force", sb_opts, { buffer = ev.buf }))
-      end,
-    }) ]]
+    vim.keymap.set("n", "<leader>E", ":Switchboard float run<CR>", sb_opts)
+    vim.keymap.set("n", "<leader>T", ":Switchboard float test<CR>", sb_opts)
+    vim.keymap.set("n", "<leader>B", ":Switchboard float build<CR>", sb_opts)
+    vim.keymap.set("n", "<leader>I", ":Switchboard float repl<CR>", sb_opts)
   '';
 }
