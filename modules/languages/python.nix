@@ -18,15 +18,15 @@ in {
       basedpyright = {
         enable = true;
         settings.basedpyright.analysis = {
-          typecheckingmode = "off";
-          strictdictionaryinference = false;
-          strictlistinference = false;
-          reportprivateusage = "none";
-          reportunknownvariabletype = "none";
-          inlayhints = {
-            variabletypes = true;
-            functionreturntypes = true;
-            callargumentnames = true;
+          typeCheckingMode = "off";
+          strictDictionaryInference = false;
+          strictListInference = false;
+          reportPrivateUsage = "none";
+          reportUnknownVariableType = "none";
+          inlayHints = {
+            variableTypes = true;
+            functionReturnTypes = true;
+            callArgumentNames = true;
           };
         };
       };
