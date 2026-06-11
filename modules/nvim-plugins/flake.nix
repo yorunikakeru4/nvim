@@ -100,15 +100,7 @@
     in {
       packages = {
         copilot-lua = mk "copilot-lua" inputs.copilot-lua;
-        keystroke-nvim = (mk "keystroke-nvim" inputs.keystroke-nvim).overrideAttrs (old: {
-          postPatch =
-            (old.postPatch or "")
-            + ''
-              substituteInPlace lua/keystroke/sound/init.lua \
-                --replace-fail 'sound_cmd = "mpg123"' \
-                  'sound_cmd = { "mpg123", "--stereo" }'
-            '';
-        });
+        keystroke-nvim = mk "keystroke-nvim" inputs.keystroke-nvim;
         hbac-nvim =
           (pkgs.vimUtils.buildVimPlugin {
             pname = "hbac-nvim";
