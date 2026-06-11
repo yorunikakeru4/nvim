@@ -189,9 +189,6 @@
 
     -- LSP
     map("n", "<leader>a", function() vim.cmd("LspRestart") vim.cmd("echo 'LSP restarted'") end)
-    map("n", "<leader>C", function()
-      vim.cmd("Copilot disable") vim.cmd("Copilot enable") vim.cmd("echo 'Copilot restarted'")
-    end)
 
     -- Line movement
     map("n", "<A-k>", ":m .-2<CR>==")

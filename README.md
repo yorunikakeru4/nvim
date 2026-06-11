@@ -180,11 +180,10 @@ nixvimLanguages.go.enable = false;
 | `nt`         | v    | GoTagAdd (Go struct tag)                  |
 | `<leader>F`  | n    | Format buffer                             |
 | `<leader>a`  | n    | Restart LSP                               |
-| `<leader>C`  | n    | Restart Copilot                           |
-| `<M-CR>`     | i    | Open Copilot variants panel               |
-| `<M-l>`      | i    | Accept inline Copilot suggestion          |
-| `<M-[>`      | i    | Previous inline Copilot suggestion        |
-| `<M-]>`      | i    | Next inline Copilot suggestion            |
+| `<A-CR>`     | i    | Open Copilot variants panel               |
+| `<C-L>`      | i    | Accept inline Copilot suggestion          |
+| `<A-[>`      | i    | Previous inline Copilot suggestion        |
+| `<A-]>`      | i    | Next inline Copilot suggestion            |
 | `<leader>cn` | n    | Accept Copilot next edit and go to end    |
 | `<leader>cx` | n    | Dismiss Copilot next edit                 |
 | `<leader>rh` | n    | Switch C/C++ source ↔ header              |
