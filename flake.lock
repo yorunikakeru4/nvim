@@ -158,11 +158,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779726825,
-        "narHash": "sha256-RUkMrREjKDQrA+dA9+xZviGAxM5W1aVdyOr/bSYpHrE=",
+        "lastModified": 1781184346,
+        "narHash": "sha256-cZRlW47U6A2nWvAmnZeeO6Xvq23gxYbVLel4KxqOrcQ=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "b179bde238977f7d4454fc770b1a727eaf55111c",
+        "rev": "ea6d221d7aa85652d014b6f719dddf036037515b",
         "type": "github"
       },
       "original": {
@@ -190,11 +190,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1780203844,
-        "narHash": "sha256-K5sT4jTpGs15ADhviMKNBH38REpPf5Q6mM1+N6cArVE=",
+        "lastModified": 1780902259,
+        "narHash": "sha256-q8yYEC5f1mFlQO9RGna4LTc9QrcvWunX6FYp83munkQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b51242d7d43689db2f3be91bd05d5b24fbb469c4",
+        "rev": "bd0ff2d3eac24699c3664d5966b9ef36f388e2ca",
         "type": "github"
       },
       "original": {
@@ -213,11 +213,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1780214453,
-        "narHash": "sha256-Bfq9y0X6Vs4UPb67u7hN3jt7fJKHtl3+g0lBSDebRNg=",
+        "lastModified": 1781038653,
+        "narHash": "sha256-MxUVyE7A5QMJXOEFQhOHsqs4UPhujeDgdFhguE7Wmic=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "167da56c3ab1e51751a6ae4a997ed66587f9edae",
+        "rev": "e7ce6708cc5b6275406a8feee06ca50c5cafd6bf",
         "type": "github"
       },
       "original": {
@@ -241,8 +241,10 @@
         "nixpkgs": [
           "nixpkgs"
         ],
+        "pnpm2nix": "pnpm2nix",
         "seeker-nvim": "seeker-nvim",
         "signup-nvim": "signup-nvim",
+        "telegram-nvim": "telegram-nvim",
         "vim-autoread": "vim-autoread",
         "vim-highlighturl": "vim-highlighturl",
         "vim-php-cs-fixer": "vim-php-cs-fixer"
@@ -256,6 +258,23 @@
         "type": "path"
       },
       "parent": []
+    },
+    "pnpm2nix": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1717937937,
+        "narHash": "sha256-bKoHjG5P15vCVpDndIXFfoJC65XhrBPQ9GWcXtXNuDA=",
+        "owner": "wrvsrx",
+        "repo": "pnpm2nix-nzbr",
+        "rev": "a2d285ad5718cb202f45e98a4f839a5b2608c4b1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "wrvsrx",
+        "ref": "adapt-to-v9",
+        "repo": "pnpm2nix-nzbr",
+        "type": "github"
+      }
     },
     "root": {
       "inputs": {
@@ -324,6 +343,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "telegram-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1780884418,
+        "narHash": "sha256-ByRa5BWekVhMe/Y7B2qH6XOaMgXr+EffdkX9V6AfR0g=",
+        "owner": "ChuYanLon",
+        "repo": "telegram.nvim",
+        "rev": "10d9b3c40af9a7e09fc015a2cd429a12fa16706a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ChuYanLon",
+        "repo": "telegram.nvim",
         "type": "github"
       }
     },
