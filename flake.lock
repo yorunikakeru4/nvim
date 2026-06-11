@@ -281,7 +281,8 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
-        "nvim-plugins": "nvim-plugins"
+        "nvim-plugins": "nvim-plugins",
+        "tdlib-src": "tdlib-src"
       }
     },
     "seeker-nvim": {
@@ -343,6 +344,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "tdlib-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1779117169,
+        "narHash": "sha256-H6R959XVkMB9OVAynRvBYB53hzUPKY0Us+HkbiuPZN0=",
+        "owner": "tdlib",
+        "repo": "td",
+        "rev": "e0943d068ce90b5010f1aea946e6901e25b43bf6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tdlib",
+        "repo": "td",
         "type": "github"
       }
     },
