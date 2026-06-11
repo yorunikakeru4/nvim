@@ -12,12 +12,7 @@
       )[1],
     }
     local play_sound = debounce.debounce_trailing(function(path)
-      vim.system({
-        "pw-play",
-        "--channels=2",
-        "--channel-map=Stereo",
-        path,
-      })
+      vim.system({ "pw-play", path })
     end, 50, false)
 
     require("keystroke").setup({
