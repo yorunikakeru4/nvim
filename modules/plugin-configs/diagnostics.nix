@@ -6,25 +6,16 @@
         pattern = "*";
         command = "setlocal formatoptions-=r formatoptions-=o";
       }
-      {
-        event = [
-          "BufReadPost"
-          "BufWritePost"
-        ];
-        callback.__raw = ''
-          function()
-            local lint = require("lint")
-
-            if vim.bo.filetype == "markdown" then
-              lint.try_lint("proselint")
-              return
-            end
-
-            lint.try_lint()
-          end
-        '';
-      }
     ];
+
+    plugins.lint = {
+      enable = true;
+      autoCmd.event = [
+        "BufReadPost"
+        "BufWritePost"
+      ];
+      # per-filetype linters contributed by modules/languages/*.nix
+    };
 
     plugins.todo-comments.settings = {
       signs = true;

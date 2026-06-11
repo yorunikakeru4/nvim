@@ -9,6 +9,8 @@ in {
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [marksman proselint];
 
+    programs.nixvim.plugins.lint.lintersByFt.markdown = ["proselint"];
+
     programs.nixvim.plugins.lsp.servers.marksman = {
       enable = true;
       cmd = ["marksman" "server"];

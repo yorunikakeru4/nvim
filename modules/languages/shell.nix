@@ -7,6 +7,11 @@
   cfg = config.nixvimLanguages.shell;
 in {
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [shfmt];
+    home.packages = with pkgs; [shfmt shellcheck];
+
+    programs.nixvim.plugins.lint.lintersByFt = {
+      sh = ["shellcheck"];
+      bash = ["shellcheck"];
+    };
   };
 }

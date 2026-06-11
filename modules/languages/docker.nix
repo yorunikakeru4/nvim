@@ -7,7 +7,9 @@
   cfg = config.nixvimLanguages.docker;
 in {
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [dockerfile-language-server docker-compose-language-service];
+    home.packages = with pkgs; [dockerfile-language-server docker-compose-language-service hadolint];
+
+    programs.nixvim.plugins.lint.lintersByFt.dockerfile = ["hadolint"];
 
     programs.nixvim = {
       filetype.filename = {

@@ -91,7 +91,6 @@ in {
       vim-fugitive
       gv-vim
       lazygit-nvim
-      nvim-lint
       cmp-buffer
       cmp-nvim-lsp
       cmp-path
