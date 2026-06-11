@@ -6,12 +6,6 @@
         settings = {};
       };
 
-      lspkind = {
-        enable = true;
-        cmp.enable = false;
-        settings = {};
-      };
-
       fidget.settings = {
         progress = {
           display = {
