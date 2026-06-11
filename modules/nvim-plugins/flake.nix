@@ -105,7 +105,9 @@
       telegramNodeModules =
         (pnpm2nix.mkPnpmPackage {
           src = inputs.telegram-nvim;
-          pnpm = pkgs.pnpm;
+          # lockfile is v9; pkgs.pnpm (11.x) re-resolves optional platform deps
+          # (esbuild binaries) over the network, which the sandbox blocks (EAI_AGAIN)
+          pnpm = pkgs.pnpm_9;
         })
         .nodeModules;
     in {
