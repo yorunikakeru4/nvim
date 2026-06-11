@@ -37,10 +37,17 @@
     forAllSystems = nixpkgs.lib.genAttrs systems;
 
     mkHomeModule = {
+      pkgs,
+      lib,
+      ...
+    }: {
       imports = [
         nixvim.homeModules.nixvim
         ./modules
       ];
+
+      # Match host nixpkgs explicitly; suppresses nixvim `follows` warning.
+      programs.nixvim.nixpkgs.source = lib.mkDefault pkgs.path;
 
       _module.args.nvimFlakeInputs = inputs;
     };
