@@ -40,7 +40,6 @@
             nvim_lsp = "[LSP]",
             luasnip = "[Snip]",
             path = "[Path]",
-            fillstruct = "[Go]",
           })[entry.source.name] or ""
           if detail and detail ~= "" then
             if #detail > 10 then detail = detail:sub(1, 15) .. "..." end
@@ -97,7 +96,6 @@
       sources = {
         { name = "nvim_lsp", group_index = 2, priority = 2500 },
         { name = "luasnip",  group_index = 2},
-        { name = "fillstruct" },
         { name = "path",     group_index = 2 },
         { name = "buffer",   group_index = 2 },
         { name = "dotenv",   group_index = 2 },
