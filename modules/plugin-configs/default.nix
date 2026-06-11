@@ -8,7 +8,6 @@
     ./editing.nix
     ./ui.nix
     ./git.nix
-    ./copilot.nix
     ./lsp-ui.nix
     ./terminal.nix
     ./diagnostics.nix

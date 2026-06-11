@@ -5,11 +5,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     flake-utils.url = "github:numtide/flake-utils";
 
-    copilot-lua = {
-      url = "github:zbirenbaum/copilot.lua";
-      flake = false;
-    };
-
     keystroke-nvim = {
       url = "github:jerrywang1981/keystroke.nvim";
       flake = false;
@@ -99,7 +94,6 @@
       pnpm2nix = pkgs.callPackage "${inputs.pnpm2nix}/derivation.nix" {};
     in {
       packages = {
-        copilot-lua = mk "copilot-lua" inputs.copilot-lua;
         keystroke-nvim = mk "keystroke-nvim" inputs.keystroke-nvim;
         hbac-nvim =
           (pkgs.vimUtils.buildVimPlugin {

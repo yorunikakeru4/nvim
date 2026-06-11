@@ -106,7 +106,6 @@ nixvimLanguages.go.enable = false;
 | Category   | Plugin(s)                                                                     |
 | ---------- | ----------------------------------------------------------------------------- |
 | Completion | nvim-cmp, luasnip, friendly-snippets, cmp-dotenv                              |
-| AI         | copilot.lua (inline + variants panel), copilot-lsp (NES)                      |
 | LSP UI     | lspsaga, fidget, lspkind, neogen, signup.nvim (signature help)                |
 | Navigation | telescope + fzf-native, oil.nvim, nvim-tree, seeker.nvim, outline.nvim, flash |
 | Buffers    | nvim-cokeline (tabs), hbac (auto-close old buffers, threshold=10)             |
@@ -179,15 +178,7 @@ nixvimLanguages.go.enable = false;
 | `nt`         | v    | GoTagAdd (Go struct tag)                  |
 | `<leader>F`  | n    | Format buffer                             |
 | `<leader>a`  | n    | Restart LSP                               |
-| `<A-CR>`     | i    | Open Copilot variants panel               |
-| `<C-L>`      | i    | Accept inline Copilot suggestion          |
-| `<A-[>`      | i    | Previous inline Copilot suggestion        |
-| `<A-]>`      | i    | Next inline Copilot suggestion            |
-| `<leader>cn` | n    | Accept Copilot next edit and go to end    |
-| `<leader>cx` | n    | Dismiss Copilot next edit                 |
 
-Inside the Copilot variants panel, use `j`/`k` or `]]`/`[[` to select,
-`<CR>` to accept, `gr` to refresh, and `q`/`Esc` to close.
 
 ### Diagnostics (`z` prefix)
 

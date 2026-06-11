@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "copilot-cmp": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1733947099,
+        "narHash": "sha256-erRL8bY/zuwuCZfttw+avTrFV7pjv2H6v73NzY2bymM=",
+        "owner": "zbirenbaum",
+        "repo": "copilot-cmp",
+        "rev": "15fc12af3d0109fa76b60b5cffa1373697e261d1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zbirenbaum",
+        "repo": "copilot-cmp",
+        "type": "github"
+      }
+    },
     "copilot-lua": {
       "flake": false,
       "locked": {
@@ -180,6 +196,7 @@
     },
     "root": {
       "inputs": {
+        "copilot-cmp": "copilot-cmp",
         "copilot-lua": "copilot-lua",
         "flake-utils": "flake-utils",
         "go-impl-nvim": "go-impl-nvim",

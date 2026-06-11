@@ -45,11 +45,6 @@ in {
       };
       lsp.enable = true;
       cmp.enable = true;
-      copilot-lua = {
-        enable = true;
-        package = custom.copilot-lua;
-        callSetup = false;
-      };
       luasnip.enable = true;
       conform-nvim.enable = true;
       telescope.enable = true;
