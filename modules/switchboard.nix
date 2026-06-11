@@ -66,9 +66,9 @@
     })
 
     local sb_opts = { noremap = true, silent = true }
-    vim.keymap.set("n", "<leader>E", ":Switchboard overlay run<CR>", sb_opts)
-    vim.keymap.set("n", "<leader>T", ":Switchboard overlay test<CR>", sb_opts)
-    vim.keymap.set("n", "<leader>B", ":Switchboard overlay build<CR>", sb_opts)
-    vim.keymap.set("n", "<leader>I", ":Switchboard overlay repl<CR>", sb_opts)
+    vim.keymap.set("n", "<leader>E", ":Switchboard split run<CR>", sb_opts)
+    vim.keymap.set("n", "<leader>T", ":Switchboard split test<CR>", sb_opts)
+    vim.keymap.set("n", "<leader>B", ":Switchboard split build<CR>", sb_opts)
+    vim.keymap.set("n", "<leader>I", ":Switchboard split repl<CR>", sb_opts)
   '';
 }
