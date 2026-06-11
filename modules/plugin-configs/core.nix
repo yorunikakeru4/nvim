@@ -1,9 +1,5 @@
 {...}: {
   programs.nixvim = {
-    opts = {
-      sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions";
-    };
-
     autoGroups.checktime.clear = true;
 
     autoCmd = [
