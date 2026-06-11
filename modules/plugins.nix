@@ -121,6 +121,7 @@ in {
       custom.goplements-nvim
       custom.go-tagger-nvim
       custom.vim-php-cs-fixer
+      custom.telegram-nvim
       # dap helpers
       nvim-dap-virtual-text
       nvim-dap-go

@@ -8,6 +8,7 @@
     ./ui.nix
     ./git.nix
     ./copilot.nix
+    ./telegram.nix
     ./lsp-ui.nix
     ./terminal.nix
     ./diagnostics.nix
