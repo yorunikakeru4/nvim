@@ -50,11 +50,6 @@ in {
         package = custom.copilot-lua;
         callSetup = false;
       };
-      copilot-lsp = {
-        enable = true;
-        package = custom.copilot-lsp;
-        settings.nes.move_count_threshold = 3;
-      };
       luasnip.enable = true;
       conform-nvim.enable = true;
       telescope.enable = true;

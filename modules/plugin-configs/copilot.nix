@@ -1,7 +1,5 @@
 {...}: {
   programs.nixvim = {
-    globals.copilot_nes_debounce = 500;
-
     extraConfigLua = ''
       require("copilot").setup({
         suggestion = {
@@ -30,13 +28,7 @@
           },
         },
         nes = {
-          enabled = true,
-          auto_trigger = true,
-          keymap = {
-            accept_and_goto = "<A-CR>",
-            accept = false,
-            dismiss = "<leader>cx",
-          },
+          enabled = false,
         },
       })
 
