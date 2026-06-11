@@ -5,11 +5,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     flake-utils.url = "github:numtide/flake-utils";
 
-    keystroke-nvim = {
-      url = "github:jerrywang1981/keystroke.nvim";
-      flake = false;
-    };
-
     hbac-nvim = {
       url = "github:axkirillov/hbac.nvim";
       flake = false;
@@ -94,7 +89,6 @@
       pnpm2nix = pkgs.callPackage "${inputs.pnpm2nix}/derivation.nix" {};
     in {
       packages = {
-        keystroke-nvim = mk "keystroke-nvim" inputs.keystroke-nvim;
         hbac-nvim =
           (pkgs.vimUtils.buildVimPlugin {
             pname = "hbac-nvim";
