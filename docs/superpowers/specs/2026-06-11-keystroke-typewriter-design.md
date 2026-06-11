@@ -12,10 +12,9 @@ Add `keystroke-nvim` as a non-flake input in
 `mk` helper, then add `custom.keystroke-nvim` to
 `programs.nixvim.extraPlugins`.
 
-Do not add an audio player or other runtime package. The existing `aplay`
-binary must remain available through `PATH`. The plugin selects supported
-external players itself and will use `aplay` when it reaches that available
-fallback.
+Do not add an audio player or other runtime package. `mpg123` must be
+installed outside this flake and available through `PATH`. The plugin checks
+for `mpg123` before `aplay`, so it will select the MP3-capable player.
 
 ## Configuration
 
@@ -36,8 +35,10 @@ Keep upstream commands available, including `:KeyStrokeEnable`,
 ## Failure Behavior
 
 Plugin loading and setup remain deterministic through the flake. Sound
-playback depends on `aplay` being present in the runtime `PATH` and a working
-audio device. No fallback package is installed by this configuration.
+playback depends on `mpg123` being present in the runtime `PATH` and a working
+audio device. No fallback package is installed by this configuration. Using
+the plugin's later `aplay` fallback is unsupported because upstream passes it
+MP3 files that ALSA `aplay` cannot decode.
 
 ## Verification
 
