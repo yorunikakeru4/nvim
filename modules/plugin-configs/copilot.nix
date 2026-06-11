@@ -33,7 +33,7 @@
           enabled = true,
           auto_trigger = true,
           keymap = {
-            accept_and_goto = "<leader>cn",
+            accept_and_goto = "<A-CR>",
             accept = false,
             dismiss = "<leader>cx",
           },
@@ -100,7 +100,7 @@
         vim.keymap.set("n", "<Esc>", close_panel, opts)
       end
 
-      vim.keymap.set("i", "<A-CR>", open_floating_panel, {
+      vim.keymap.set("i", "<A-Tab>", open_floating_panel, {
         desc = "Open Copilot variants",
         silent = true,
       })

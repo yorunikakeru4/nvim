@@ -185,7 +185,6 @@ nixvimLanguages.go.enable = false;
 | `<A-]>`      | i    | Next inline Copilot suggestion            |
 | `<leader>cn` | n    | Accept Copilot next edit and go to end    |
 | `<leader>cx` | n    | Dismiss Copilot next edit                 |
-| `<leader>rh` | n    | Switch C/C++ source ↔ header              |
 
 Inside the Copilot variants panel, use `j`/`k` or `]]`/`[[` to select,
 `<CR>` to accept, `gr` to refresh, and `q`/`Esc` to close.
