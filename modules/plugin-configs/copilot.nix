@@ -9,12 +9,9 @@
           auto_trigger = true,
           hide_during_completion = true,
           keymap = {
-            accept = "<C-L>",
+            accept = "<A-l>",
             accept_word = false,
             accept_line = false,
-            next = "<A-]>",
-            prev = "<A-[>",
-            dismiss = "<C-]>",
           },
         },
         panel = {
@@ -69,6 +66,12 @@
         if not vim.api.nvim_buf_get_name(buf):match("^copilot://") then
           return
         end
+
+        -- Workaround copilot.lua bug: panel:close() unsets buffer-local keymaps
+        -- (<CR> accept, [[, ]], gr) but ensure_bufnr() only re-registers them
+        -- when the buffer is recreated. The panel buffer survives closing
+        -- (bufhidden=hide), so on every reopen accept silently stops working.
+        panel.set_keymap(buf)
 
         local width = math.max(1, math.min(vim.o.columns - 4, math.floor(vim.o.columns * 0.95)))
         local height = math.max(1, math.min(vim.o.lines - 4, math.floor(vim.o.lines * 0.85)))
