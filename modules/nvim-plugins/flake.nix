@@ -100,6 +100,9 @@
     in {
       packages = {
         copilot-lua = mk "copilot-lua" inputs.copilot-lua;
+        copilot-lsp = pkgs.vimPlugins.copilot-lsp.overrideAttrs (old: {
+          patches = (old.patches or []) ++ [./patches/copilot-lsp-clamp-deletion-range.patch];
+        });
         keystroke-nvim = mk "keystroke-nvim" inputs.keystroke-nvim;
         hbac-nvim =
           (pkgs.vimUtils.buildVimPlugin {

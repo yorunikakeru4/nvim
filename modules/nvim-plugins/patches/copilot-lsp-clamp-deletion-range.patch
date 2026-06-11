@@ -1,0 +1,12 @@
+diff --git a/lua/copilot-lsp/nes/ui.lua b/lua/copilot-lsp/nes/ui.lua
+index 64b555e..b414490 100644
+--- a/lua/copilot-lsp/nes/ui.lua
++++ b/lua/copilot-lsp/nes/ui.lua
+@@ -149,6 +149,7 @@ function M._display_preview(bufnr, ns_id, preview)
+             hl_group = "CopilotLspNesDelete",
+             end_row = range["end"].line,
+             end_col = math.min(range["end"].character, #existing_line),
++            strict = false,
+         })
+     end
+ 

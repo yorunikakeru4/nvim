@@ -52,6 +52,7 @@ in {
       };
       copilot-lsp = {
         enable = true;
+        package = custom.copilot-lsp;
         settings.nes.move_count_threshold = 3;
       };
       luasnip.enable = true;
