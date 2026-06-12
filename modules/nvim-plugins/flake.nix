@@ -79,6 +79,11 @@
             url = "github:DrKJeff16/boolean-toggle.nvim";
             flake = false;
         };
+
+        milli-nvim = {
+            url = "github:Amansingh-afk/milli.nvim";
+            flake = false;
+        };
     };
 
     outputs =
@@ -138,6 +143,7 @@
                     atlas-nvim = mk "atlas-nvim" inputs.atlas-nvim;
                     match-nvim = mk "match-nvim" inputs.match-nvim;
                     boolean-toggle = mk "boolean-toggle" inputs.boolean-toggle;
+                    milli-nvim = mk "milli-nvim" inputs.milli-nvim;
                 };
             }
         );

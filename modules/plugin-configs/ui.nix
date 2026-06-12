@@ -18,11 +18,6 @@
                 };
             };
 
-            startup = {
-                enable = true;
-                settings.theme = "dashboard";
-            };
-
             treesitter-context = {
                 enable = true;
                 settings = {
@@ -33,6 +28,8 @@
         };
 
         extraConfigLua = ''
+            require("milli").vimenter({ splash = "vibecattwo", loop = true })
+
             require("match").setup()
             require("render-markdown.state").config.conceal = nil
 
