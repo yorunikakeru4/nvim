@@ -28,7 +28,7 @@
         };
 
         extraConfigLua = ''
-            require("milli").vimenter({ splash = "vibecattwo", loop = true })
+            require("milli").vimenter({ splash = "skulltwo", loop = true })
 
             require("match").setup()
             require("render-markdown.state").config.conceal = nil
