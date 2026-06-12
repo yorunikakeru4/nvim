@@ -33,7 +33,7 @@
         };
 
         extraConfigLua = ''
-            require("match").setup()
+            -- require("match").setup()
             require("render-markdown.state").config.conceal = nil
 
             -- cokeline

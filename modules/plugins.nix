@@ -115,6 +115,7 @@ in
             custom.vim-php-cs-fixer
             custom.switchboard-nvim
             custom.atlas-nvim
+            custom.match-nvim
             # dap helpers
             nvim-dap-virtual-text
             nvim-dap-go
