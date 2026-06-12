@@ -258,7 +258,6 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "profile-nvim": "profile-nvim",
         "seeker-nvim": "seeker-nvim",
         "signup-nvim": "signup-nvim",
         "switchboard-nvim": "switchboard-nvim",
@@ -275,22 +274,6 @@
         "type": "path"
       },
       "parent": []
-    },
-    "profile-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1780806504,
-        "narHash": "sha256-VMU2o8maOQiD/063o9ZbpH09/Wt3UZ+L3sK15KqkfRU=",
-        "owner": "Kurama622",
-        "repo": "profile.nvim",
-        "rev": "80b125dfe4c12c58730886b4cc5a7a64f69bc7a2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Kurama622",
-        "repo": "profile.nvim",
-        "type": "github"
-      }
     },
     "root": {
       "inputs": {

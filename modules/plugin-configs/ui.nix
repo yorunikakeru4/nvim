@@ -1,10 +1,5 @@
 { pkgs, ... }: {
     programs.nixvim = {
-        extraPackages = with pkgs; [
-            curl
-            jq
-        ];
-
         plugins = {
             ccc = {
                 enable = true;
@@ -70,79 +65,6 @@
         };
 
         extraConfigLua = ''
-            -- profile.nvim dashboard
-            local comp = require("profile.components")
-            local win_width = vim.o.columns
-            require("profile").setup({
-              avatar_path = "${../../pictures/kim.png}",
-              avatar_opts = {
-                avatar_width = 20,
-                avatar_height = 20,
-                avatar_x = math.floor((win_width - 20) / 2),
-                avatar_y = 7,
-                force_blank = true,
-              },
-
-              user = "yorunikakeru4",
-              git_contributions = {
-                start_week = 1,
-                end_week = 53,
-                empty_char = " ",
-                full_char = { "", "󰧞", "", "", "" },
-                fake_contributions = nil,
-                cache_path = "/tmp/profile.nvim/",
-                cache_duration = 24 * 60 * 60,
-                non_official_api_cmd = [[ curl -s "https://github-contributions-api.jogruber.de/v4/%s?y=$(date -d "1 year ago" +%%Y)&y=$(date +%%Y)" \
-                  | jq --arg start $(date -d "1 year ago" +%%Y-%%m-%%d) --arg end $(date +%%Y-%%m-%%d) \
-                  '.contributions | [ .[] | select((.date >= $start) and (.date <= $end)) ] | sort_by(.date) | (.[0].date | strptime("%%Y-%%m-%%d") | strftime("%%w") | tonumber) as $wd | map(.count) | ([range(0, $wd) ] | map(0)) + . | . as $array | reduce range(0; length; 7) as $i ({}; . + {($i/7+1 | tostring): $array[$i:$i+7] })' ]],
-              },
-
-              hide = {
-                statusline = true,
-                tabline = true,
-              },
-
-              disable_keys = { "h", "j", "k", "<Left>", "<Right>", "<Up>", "<Down>", "<C-f>" },
-              cursor_pos = { 0, 0 },
-
-              format = function()
-                comp:avatar()
-                comp:text_component_render({
-                  comp:text_component("git@github.com:yorunikakeru4/nvim", "center", "ProfileRed"),
-                  comp:text_component("──── By yorunikakeru4", "right", "ProfileBlue"),
-                })
-                comp:separator_render()
-
-                comp:card_component_render({
-                  type = "table",
-                  content = function()
-                    return {
-                      {
-                        title = "yorunikakeru4/yorunikakeru4",
-                        description = [[GitHub profile]],
-                      },
-                    }
-                  end,
-                  hl = {
-                    border = "ProfileYellow",
-                    text = "ProfileYellow",
-                  },
-                })
-                comp:separator_render()
-
-                comp:git_contributions_render("ProfileGreen")
-              end,
-            })
-            vim.keymap.set("n", "<leader>p", "<cmd>Profile<cr>", { silent = true })
-            vim.api.nvim_create_autocmd("VimEnter", {
-              group = vim.api.nvim_create_augroup("ProfileDashboard", { clear = true }),
-              callback = function()
-                if vim.fn.argc() == 0 and vim.api.nvim_buf_get_name(0) == "" then
-                  vim.cmd("Profile")
-                end
-              end,
-            })
-
             require("match").setup()
             require("render-markdown.state").config.conceal = nil
 
