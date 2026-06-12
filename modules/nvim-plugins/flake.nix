@@ -69,6 +69,11 @@
       url = "github:karnull/switchboard.nvim";
       flake = false;
     };
+
+    atlas-nvim = {
+      url = "github:emrearmagan/atlas.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {
@@ -89,45 +94,20 @@
       pnpm2nix = pkgs.callPackage "${inputs.pnpm2nix}/derivation.nix" {};
     in {
       packages = {
-        hbac-nvim =
-          (pkgs.vimUtils.buildVimPlugin {
-            pname = "hbac-nvim";
-            src = inputs.hbac-nvim;
-            version = inputs.hbac-nvim.shortRev or "unknown";
-            nvimSkipModule = [
-              "hbac.telescope.make_finder"
-              "hbac.telescope.actions"
-              "hbac.telescope.init"
-              "hbac.telescope.make_display"
-            ];
-          })
-          .overrideAttrs (_: {postInstall = "";});
+        hbac-nvim = mk "hbac-nvim" inputs.hbac-nvim;
         vim-autoread = mk "vim-autoread" inputs.vim-autoread;
-        seeker-nvim =
-          (pkgs.vimUtils.buildVimPlugin {
-            pname = "seeker-nvim";
-            src = inputs.seeker-nvim;
-            version = inputs.seeker-nvim.shortRev or "unknown";
-            nvimSkipModule = ["seeker.backends.snacks"];
-          })
-          .overrideAttrs (_: {postInstall = "";});
+        seeker-nvim = mk "seeker-nvim" inputs.seeker-nvim;
         signup-nvim = mk "signup-nvim" inputs.signup-nvim;
         markdown-plus-nvim = mk "markdown-plus-nvim" inputs.markdown-plus-nvim;
         vim-highlighturl = mk "vim-highlighturl" inputs.vim-highlighturl;
         gopher-nvim = mk "gopher-nvim" inputs.gopher-nvim;
         gotests-nvim = mk "gotests-nvim" inputs.gotests-nvim;
-        go-impl-nvim =
-          (pkgs.vimUtils.buildVimPlugin {
-            pname = "go-impl-nvim";
-            src = inputs.go-impl-nvim;
-            version = inputs.go-impl-nvim.shortRev or "unknown";
-            nvimSkipModule = ["go-impl" "go-impl.ui" "go-impl.helper" "go-impl.cmd"];
-          })
-          .overrideAttrs (_: {postInstall = "";});
+        go-impl-nvim = mk "go-impl-nvim" inputs.go-impl-nvim;
         goplements-nvim = mk "goplements-nvim" inputs.goplements-nvim;
         go-tagger-nvim = mk "go-tagger-nvim" inputs.go-tagger-nvim;
         vim-php-cs-fixer = mk "vim-php-cs-fixer" inputs.vim-php-cs-fixer;
         switchboard-nvim = mk "switchboard-nvim" inputs.switchboard-nvim;
+        atlas-nvim = mk "atlas-nvim" inputs.atlas-nvim;
       };
     });
 }

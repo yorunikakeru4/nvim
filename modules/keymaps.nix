@@ -49,6 +49,9 @@
     map("n", "<leader>gs", "<cmd>Gitsigns diffthis<CR>")
     map("n", "<leader>gh", "<cmd>GV<CR>")
     map("n", "<leader>gg", "<cmd>LazyGit<CR>")
+    map("n", "<leader>gp", "<cmd>AtlasPulls github<CR>")
+    map("n", "<leader>gi", "<cmd>AtlasIssues github<CR>")
+    map("n", "<leader>g/", "<cmd>AtlasSearch github<CR>")
 
     -- Find
     local tb = require("telescope.builtin")

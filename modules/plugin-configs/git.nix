@@ -22,5 +22,17 @@
         ctermfg.__raw = "184";
       };
     };
+
+    extraConfigLua = ''
+      require("atlas").setup({
+        pulls = {
+          diff = { open_cmd = "DiffviewOpen" },
+          providers = { github = {} },
+        },
+        issues = {
+          providers = { github = {} },
+        },
+      })
+    '';
   };
 }

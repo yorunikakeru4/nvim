@@ -1,34 +1,18 @@
 {
   "nodes": {
-    "copilot-cmp": {
+    "atlas-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1733947099,
-        "narHash": "sha256-erRL8bY/zuwuCZfttw+avTrFV7pjv2H6v73NzY2bymM=",
-        "owner": "zbirenbaum",
-        "repo": "copilot-cmp",
-        "rev": "15fc12af3d0109fa76b60b5cffa1373697e261d1",
+        "lastModified": 1780828321,
+        "narHash": "sha256-jO/iSGWyD+j8/DQhgvNqbdSpiI2gVqyrrHv5MSp91zs=",
+        "owner": "emrearmagan",
+        "repo": "atlas.nvim",
+        "rev": "1221b8dd6d9a51f79872e524ea5e61009060ab80",
         "type": "github"
       },
       "original": {
-        "owner": "zbirenbaum",
-        "repo": "copilot-cmp",
-        "type": "github"
-      }
-    },
-    "copilot-lua": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1781185194,
-        "narHash": "sha256-xjdTysyt7BMb8a9c2HPQN85EujhQv9ZCQ87yWHjELls=",
-        "owner": "zbirenbaum",
-        "repo": "copilot.lua",
-        "rev": "dada2f90220861d6e9d30eca6a3997cf5d0c9936",
-        "type": "github"
-      },
-      "original": {
-        "owner": "zbirenbaum",
-        "repo": "copilot.lua",
+        "owner": "emrearmagan",
+        "repo": "atlas.nvim",
         "type": "github"
       }
     },
@@ -188,22 +172,6 @@
         "type": "github"
       }
     },
-    "keystroke-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1743468002,
-        "narHash": "sha256-BrIsSZ+LGNrTdA5Q32eiN7nHNmJIglDwsvd1dZMnAMo=",
-        "owner": "jerrywang1981",
-        "repo": "keystroke.nvim",
-        "rev": "e1086c491958ca8386327acbcab7f7931cd90d10",
-        "type": "github"
-      },
-      "original": {
-        "owner": "jerrywang1981",
-        "repo": "keystroke.nvim",
-        "type": "github"
-      }
-    },
     "markdown-plus-nvim": {
       "flake": false,
       "locked": {
@@ -261,8 +229,7 @@
     },
     "nvim-plugins": {
       "inputs": {
-        "copilot-cmp": "copilot-cmp",
-        "copilot-lua": "copilot-lua",
+        "atlas-nvim": "atlas-nvim",
         "flake-utils": "flake-utils",
         "go-impl-nvim": "go-impl-nvim",
         "go-tagger-nvim": "go-tagger-nvim",
@@ -270,7 +237,6 @@
         "goplements-nvim": "goplements-nvim",
         "gotests-nvim": "gotests-nvim",
         "hbac-nvim": "hbac-nvim",
-        "keystroke-nvim": "keystroke-nvim",
         "markdown-plus-nvim": "markdown-plus-nvim",
         "nixpkgs": [
           "nixpkgs"
