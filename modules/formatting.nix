@@ -13,7 +13,7 @@ in {
   programs.nixvim.plugins.conform-nvim.settings = {
     formatters_by_ft = {
       sh = ["shfmt"];
-      nix = ["alejandra"];
+      nix = ["nixfmt"];
       just = ["just"];
       lua = ["stylua"];
       go = {
@@ -55,6 +55,7 @@ in {
 
     formatters.clang_format.prepend_args = ["--style=file" "--fallback-style=none"];
     formatters.fourmolu.prepend_args = ["--indentation=4"];
+    formatters.nixfmt.prepend_args = ["--indent" "4"];
 
     format_on_save = ''
       function(bufnr)

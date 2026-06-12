@@ -75,7 +75,17 @@
   in {
     homeModules.default = mkHomeModule;
 
-    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+    formatter = forAllSystems (
+      system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+        pkgs.writeShellApplication {
+          name = "nixfmt";
+          text = ''
+            ${pkgs.nixfmt}/bin/nixfmt --indent 4 "$@"
+          '';
+        }
+    );
 
     packages = forAllSystems (system: let
       homeConfiguration = mkHomeConfiguration system;
