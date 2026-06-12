@@ -25,6 +25,11 @@
             flake = false;
         };
 
+        match-nvim = {
+            url = "github:ankushbhagats/match.nvim";
+            flake = false;
+        };
+
         markdown-plus-nvim = {
             url = "github:yousefhadder/markdown-plus.nvim";
             flake = false;
@@ -126,6 +131,7 @@
                     vim-php-cs-fixer = mk "vim-php-cs-fixer" inputs.vim-php-cs-fixer;
                     switchboard-nvim = mk "switchboard-nvim" inputs.switchboard-nvim;
                     atlas-nvim = mk "atlas-nvim" inputs.atlas-nvim;
+                    match-nvim = mk "match-nvim" inputs.match-nvim;
                 };
             }
         );
