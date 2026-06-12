@@ -74,6 +74,11 @@
             url = "github:emrearmagan/atlas.nvim";
             flake = false;
         };
+
+        boolean-toggle = {
+            url = "github:DrKJeff16/boolean-toggle.nvim";
+            flake = false;
+        };
     };
 
     outputs =
@@ -132,6 +137,7 @@
                     switchboard-nvim = mk "switchboard-nvim" inputs.switchboard-nvim;
                     atlas-nvim = mk "atlas-nvim" inputs.atlas-nvim;
                     match-nvim = mk "match-nvim" inputs.match-nvim;
+                    boolean-toggle = mk "boolean-toggle" inputs.boolean-toggle;
                 };
             }
         );

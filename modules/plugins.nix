@@ -116,6 +116,7 @@ in
             custom.switchboard-nvim
             custom.atlas-nvim
             custom.match-nvim
+            custom.boolean-toggle
             # dap helpers
             nvim-dap-virtual-text
             nvim-dap-go
