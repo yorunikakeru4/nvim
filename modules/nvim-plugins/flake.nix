@@ -87,6 +87,8 @@
                     (pkgs.vimUtils.buildVimPlugin {
                         inherit pname src;
                         version = src.shortRev or "unknown";
+
+                        nvimSkipModule = if pname == "seeker-nvim" then [ "seeker.backends.snacks" ] else [ ];
                     }).overrideAttrs
                         (_: {
                             postInstall = "";
