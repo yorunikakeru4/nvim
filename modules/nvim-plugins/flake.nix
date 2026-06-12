@@ -92,6 +92,10 @@
                         "hbac.telescope.init"
                         "hbac.telescope.make_display"
                     ];
+
+                    atlas-nvim = [
+                        "atlas.issues.providers.github.ui.conversation.init"
+                    ];
                 };
                 mk =
                     pname: src:
