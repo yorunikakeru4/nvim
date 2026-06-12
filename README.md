@@ -82,24 +82,24 @@ All languages are enabled by default. Disable via `nixvimLanguages.<lang>.enable
 nixvimLanguages.go.enable = false;
 ```
 
-| Language | LSP                             | Formatter                           | Linter        | Extra                                       |
-| -------- | ------------------------------- | ----------------------------------- | ------------- | ------------------------------------------- |
-| Go       | gopls, golangci-lint-langserver | goimports + gofmt                   | golangci-lint | gopher, gotests, go-impl, goplements, delve |
-| Rust     | rust-analyzer                   | rustfmt                             | clippy        | crates.nvim, lldb DAP                       |
-| Python   | pyright / pylsp                 | ruff_format + ruff_organize_imports | —             | nvim-dap-python                             |
-| Nix      | nil / nixd                      | nixfmt (`--indent 4`)               | —             | —                                           |
-| Lua      | lua_ls                          | stylua                              | —             | lazydev                                     |
-| PHP      | phpactor / intelephense         | php-cs-fixer                        | —             | vim-php-cs-fixer                            |
-| Elixir   | elixirls                        | mix format                          | —             | —                                           |
-| C/C++    | clangd                          | clang-format                        | —             | lldb DAP, switch header/source              |
-| Haskell  | hls                             | ormolu                              | —             | haskell-scope-highlighting                  |
-| Markdown | —                               | prettierd                           | proselint     | render-markdown, markdown-plus              |
-| SQL      | sqls                            | —                                   | —             | vim-dadbod, vim-dadbod-ui                   |
-| Shell    | bashls                          | shfmt                               | shellcheck    | —                                           |
-| Docker   | dockerls                        | —                                   | —             | —                                           |
-| YAML     | yaml-language-server            | —                                   | —             | —                                           |
-| TOML     | taplo                           | taplo                               | —             | —                                           |
-| Just     | —                               | just                                | —             | —                                           |
+| Language | LSP                             | Formatter                           | Linter        | Extra                              |
+| -------- | ------------------------------- | ----------------------------------- | ------------- | ---------------------------------- |
+| Go       | gopls, golangci-lint-langserver | goimports + gofmt                   | golangci-lint | gopher, gotests, goplements, delve |
+| Rust     | rust-analyzer                   | rustfmt                             | clippy        | crates.nvim, lldb DAP              |
+| Python   | pyright / pylsp                 | ruff_format + ruff_organize_imports | —             | nvim-dap-python                    |
+| Nix      | nil / nixd                      | nixfmt (`--indent 4`)               | —             | —                                  |
+| Lua      | lua_ls                          | stylua                              | —             | lazydev                            |
+| PHP      | phpactor / intelephense         | php-cs-fixer                        | —             | vim-php-cs-fixer                   |
+| Elixir   | elixirls                        | mix format                          | —             | —                                  |
+| C/C++    | clangd                          | clang-format                        | —             | lldb DAP, switch header/source     |
+| Haskell  | hls                             | ormolu                              | —             | haskell-scope-highlighting         |
+| Markdown | —                               | prettierd                           | proselint     | render-markdown, markdown-plus     |
+| SQL      | sqls                            | —                                   | —             | vim-dadbod, vim-dadbod-ui          |
+| Shell    | bashls                          | shfmt                               | shellcheck    | —                                  |
+| Docker   | dockerls                        | —                                   | —             | —                                  |
+| YAML     | yaml-language-server            | —                                   | —             | —                                  |
+| TOML     | taplo                           | taplo                               | —             | —                                  |
+| Just     | —                               | just                                | —             | —                                  |
 
 ## Plugins
 
@@ -162,23 +162,22 @@ nixvimLanguages.go.enable = false;
 
 ### LSP (`n` prefix)
 
-| Key          | Mode | Action                                    |
-| ------------ | ---- | ----------------------------------------- |
-| `nr`         | n    | Rename                                    |
-| `nh`         | n    | Hover docs                                |
-| `nd`         | n    | Go to definition (lspsaga)                |
-| `nc`         | n, v | Code action                               |
-| `na`         | n    | Fill struct / implement interface         |
-| `nw`         | n    | References (lspsaga finder)               |
-| `no`         | n    | Incoming calls                            |
-| `nq`         | n    | Outgoing calls                            |
-| `ng`         | n    | Generate docstring (neogen)               |
-| `ni`         | n    | Smart change-inner (quotes/brackets/word) |
-| `ns`         | n    | Prepend `$` to word under cursor          |
-| `nt`         | v    | GoTagAdd (Go struct tag)                  |
-| `<leader>F`  | n    | Format buffer                             |
-| `<leader>a`  | n    | Restart LSP                               |
-
+| Key         | Mode | Action                                    |
+| ----------- | ---- | ----------------------------------------- |
+| `nr`        | n    | Rename                                    |
+| `nh`        | n    | Hover docs                                |
+| `nd`        | n    | Go to definition (lspsaga)                |
+| `nc`        | n, v | Code action                               |
+| `na`        | n    | Fill struct / implement interface         |
+| `nw`        | n    | References (lspsaga finder)               |
+| `no`        | n    | Incoming calls                            |
+| `nq`        | n    | Outgoing calls                            |
+| `ng`        | n    | Generate docstring (neogen)               |
+| `ni`        | n    | Smart change-inner (quotes/brackets/word) |
+| `ns`        | n    | Prepend `$` to word under cursor          |
+| `nt`        | v    | GoTagAdd (Go struct tag)                  |
+| `<leader>F` | n    | Format buffer                             |
+| `<leader>a` | n    | Restart LSP                               |
 
 ### Diagnostics (`z` prefix)
 
