@@ -81,14 +81,25 @@
             system:
             let
                 pkgs = nixpkgs.legacyPackages.${system};
+                skippedModules = {
+                    seeker-nvim = [
+                        "seeker.backends.snacks"
+                    ];
 
+                    hbac-nvim = [
+                        "hbac.telescope.make_finder"
+                        "hbac.telescope.actions"
+                        "hbac.telescope.init"
+                        "hbac.telescope.make_display"
+                    ];
+                };
                 mk =
                     pname: src:
                     (pkgs.vimUtils.buildVimPlugin {
                         inherit pname src;
                         version = src.shortRev or "unknown";
 
-                        nvimSkipModule = if pname == "seeker-nvim" then [ "seeker.backends.snacks" ] else [ ];
+                        nvimSkipModule = skippedModules.${pname} or [ ];
                     }).overrideAttrs
                         (_: {
                             postInstall = "";
