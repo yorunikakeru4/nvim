@@ -117,7 +117,6 @@ in
             custom.atlas-nvim
             custom.match-nvim
             custom.boolean-toggle
-            custom.profile-nvim
             # dap helpers
             nvim-dap-virtual-text
             nvim-dap-go

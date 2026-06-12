@@ -80,10 +80,6 @@
             flake = false;
         };
 
-        profile-nvim = {
-            url = "github:Kurama622/profile.nvim";
-            flake = false;
-        };
     };
 
     outputs =
@@ -143,7 +139,6 @@
                     atlas-nvim = mk "atlas-nvim" inputs.atlas-nvim;
                     match-nvim = mk "match-nvim" inputs.match-nvim;
                     boolean-toggle = mk "boolean-toggle" inputs.boolean-toggle;
-                    profile-nvim = mk "profile-nvim" inputs.profile-nvim;
                 };
             }
         );
