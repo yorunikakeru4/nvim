@@ -27,8 +27,8 @@
         map("n", "<leader>l", ":Oil<CR>")
 
         -- Replace
-        map("n", "<leader>v", ":Match")
-        map("n", "<leader>V", ":MatchWord")
+        map("n", "<leader>v", ":Match<CR>")
+        map("n", "<leader>V", ":MatchWord<CR>")
         map("v", "<leader>v", ":s/")
 
         -- LSP
