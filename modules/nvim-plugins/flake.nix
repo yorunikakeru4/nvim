@@ -80,8 +80,8 @@
             flake = false;
         };
 
-        milli-nvim = {
-            url = "github:Amansingh-afk/milli.nvim";
+        profile-nvim = {
+            url = "github:Kurama622/profile.nvim";
             flake = false;
         };
     };
@@ -143,7 +143,7 @@
                     atlas-nvim = mk "atlas-nvim" inputs.atlas-nvim;
                     match-nvim = mk "match-nvim" inputs.match-nvim;
                     boolean-toggle = mk "boolean-toggle" inputs.boolean-toggle;
-                    milli-nvim = mk "milli-nvim" inputs.milli-nvim;
+                    profile-nvim = mk "profile-nvim" inputs.profile-nvim;
                 };
             }
         );

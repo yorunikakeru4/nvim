@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "boolean-toggle": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1781036829,
+        "narHash": "sha256-UiZzDhp0LvHe0WgrV0+kCi6Tef4h+ryDk9qY95wm0no=",
+        "owner": "DrKJeff16",
+        "repo": "boolean-toggle.nvim",
+        "rev": "71c701aeb3bd5a34cb0f9729bcf3c4fb5a913acc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DrKJeff16",
+        "repo": "boolean-toggle.nvim",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -31,22 +47,6 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "go-impl-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1776261778,
-        "narHash": "sha256-mQJBROkh5ZBy9SAPGrZtC2m91wkCm2M3fyS+AJZEaK0=",
-        "owner": "fang2hou",
-        "repo": "go-impl.nvim",
-        "rev": "17465887f14f8a00f453cdc75bfb41a11c114cbf",
-        "type": "github"
-      },
-      "original": {
-        "owner": "fang2hou",
-        "repo": "go-impl.nvim",
         "type": "github"
       }
     },
@@ -146,6 +146,22 @@
         "type": "github"
       }
     },
+    "match-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1778065256,
+        "narHash": "sha256-PLBnXM7CT2fBMHUUnI8C1k5hnt21E/wNfAX2UWsxFo8=",
+        "owner": "ankushbhagats",
+        "repo": "match.nvim",
+        "rev": "aaba435e1f08cd63e6858e8f742ac9d01091be40",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ankushbhagats",
+        "repo": "match.nvim",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1780902259,
@@ -162,18 +178,36 @@
         "type": "github"
       }
     },
+    "profile-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1780806504,
+        "narHash": "sha256-VMU2o8maOQiD/063o9ZbpH09/Wt3UZ+L3sK15KqkfRU=",
+        "owner": "Kurama622",
+        "repo": "profile.nvim",
+        "rev": "80b125dfe4c12c58730886b4cc5a7a64f69bc7a2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Kurama622",
+        "repo": "profile.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "atlas-nvim": "atlas-nvim",
+        "boolean-toggle": "boolean-toggle",
         "flake-utils": "flake-utils",
-        "go-impl-nvim": "go-impl-nvim",
         "go-tagger-nvim": "go-tagger-nvim",
         "gopher-nvim": "gopher-nvim",
         "goplements-nvim": "goplements-nvim",
         "gotests-nvim": "gotests-nvim",
         "hbac-nvim": "hbac-nvim",
         "markdown-plus-nvim": "markdown-plus-nvim",
+        "match-nvim": "match-nvim",
         "nixpkgs": "nixpkgs",
+        "profile-nvim": "profile-nvim",
         "seeker-nvim": "seeker-nvim",
         "signup-nvim": "signup-nvim",
         "switchboard-nvim": "switchboard-nvim",

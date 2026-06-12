@@ -9,6 +9,8 @@
                 };
             };
 
+            image.enable = true;
+
             render-markdown = {
                 enable = true;
                 settings = {
@@ -28,7 +30,20 @@
         };
 
         extraConfigLua = ''
-            require("milli").vimenter({ splash = "skulltwo", loop = true })
+            -- profile.nvim dashboard
+            require("profile").setup({
+              user = "yorunikakeru4",
+              avatar_path = "${../../pictures/kim.png}",
+            })
+            vim.keymap.set("n", "<leader>p", "<cmd>Profile<cr>", { silent = true })
+            vim.api.nvim_create_autocmd("VimEnter", {
+              group = vim.api.nvim_create_augroup("ProfileDashboard", { clear = true }),
+              callback = function()
+                if vim.fn.argc() == 0 and vim.api.nvim_buf_get_name(0) == "" then
+                  vim.cmd("Profile")
+                end
+              end,
+            })
 
             require("match").setup()
             require("render-markdown.state").config.conceal = nil
