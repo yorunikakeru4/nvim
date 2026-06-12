@@ -24,7 +24,7 @@
     local compare = cmp.config.compare
     cmp.setup({
       formatting = {
-        fields = { "kind", "abbr", "menu" },
+        fields = { "abbr", "kind", "menu" },
         format = function(entry, vim_item)
           if lsp_kind_icons[vim_item.kind] then
             vim_item.kind = lsp_kind_icons[vim_item.kind] .. " " .. vim_item.kind
