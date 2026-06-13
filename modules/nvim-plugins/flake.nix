@@ -71,7 +71,7 @@
         };
 
         atlas-nvim = {
-            url = "github:emrearmagan/atlas.nvim";
+            url = "github:yorunikakeru4/atlas.nvim";
             flake = false;
         };
 
