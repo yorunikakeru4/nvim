@@ -78,5 +78,9 @@
     };
 
     globals.mapleader = " ";
+
+    extraConfigLua = ''
+      vim.opt.shortmess:remove("I")
+    '';
   };
 }
