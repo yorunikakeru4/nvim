@@ -89,23 +89,5 @@
 
         globals.mapleader = " ";
 
-        extraConfigLua = ''
-            local function show_default_intro()
-              local is_empty_start = vim.fn.argc(-1) == 0
-                and vim.api.nvim_buf_get_name(0) == ""
-                and vim.api.nvim_buf_line_count(0) == 1
-                and vim.api.nvim_buf_get_lines(0, 0, 1, false)[1] == ""
-
-              if is_empty_start then
-                vim.opt.shortmess:remove("I")
-                vim.cmd("silent! intro")
-              end
-            end
-
-            vim.api.nvim_create_autocmd("VimEnter", {
-              group = vim.api.nvim_create_augroup("DefaultIntro", { clear = true }),
-              callback = show_default_intro,
-            })
-        '';
     };
 }
