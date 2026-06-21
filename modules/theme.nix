@@ -1,6 +1,6 @@
 { ... }: {
     programs.nixvim = {
-        colorschemes.gruvbox-material = {
+        colorschemes.gruvbox-baby = {
             enable = true;
             settings = {
                 transparent_mode = true;
