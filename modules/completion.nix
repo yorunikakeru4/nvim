@@ -114,7 +114,7 @@
         vim.api.nvim_set_hl(0, "CmpBorder",    { fg = g.blue,   bg = g.bg0 })
         vim.api.nvim_set_hl(0, "CmpDocNormal", { fg = g.fg,     bg = g.bg0 })
         vim.api.nvim_set_hl(0, "CmpDocBorder", { fg = g.aqua,   bg = g.bg0 })
-        vim.api.nvim_set_hl(0, "PmenuSel",     { fg = "NONE",   bg = g.aqua, bold = true })
+        vim.api.nvim_set_hl(0, "PmenuSel",     { fg = "NONE",   bg = g.yellow, bold = true })
         vim.api.nvim_set_hl(0, "CmpItemAbbr",              { fg = g.fg,     bg = "NONE" })
         vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated",    { fg = g.fg_dim, bg = "NONE", strikethrough = true })
         vim.api.nvim_set_hl(0, "CmpItemAbbrMatch",         { fg = g.blue,   bg = "NONE", bold = true })
