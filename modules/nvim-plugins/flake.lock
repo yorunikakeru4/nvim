@@ -3,15 +3,15 @@
     "atlas-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1780828321,
-        "narHash": "sha256-jO/iSGWyD+j8/DQhgvNqbdSpiI2gVqyrrHv5MSp91zs=",
-        "owner": "emrearmagan",
+        "lastModified": 1781460197,
+        "narHash": "sha256-xI6WU9xl0gr3IcqoSnOQNRDWLLmR6NlS8kPrlhbnV4E=",
+        "owner": "yorunikakeru4",
         "repo": "atlas.nvim",
-        "rev": "1221b8dd6d9a51f79872e524ea5e61009060ab80",
+        "rev": "1ba961557da97e2f5a022d884d4f3db78f88d1b0",
         "type": "github"
       },
       "original": {
-        "owner": "emrearmagan",
+        "owner": "yorunikakeru4",
         "repo": "atlas.nvim",
         "type": "github"
       }
@@ -47,6 +47,22 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "fyler-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1782060524,
+        "narHash": "sha256-sw3YNBFYfej1hB+a3b9f3SdL/CZPrvXfZTGmSkq3MpA=",
+        "owner": "FylerOrg",
+        "repo": "fyler.nvim",
+        "rev": "da6625941fe23625a5cea1d5d06233f4c7494d4c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FylerOrg",
+        "repo": "fyler.nvim",
         "type": "github"
       }
     },
@@ -183,6 +199,7 @@
         "atlas-nvim": "atlas-nvim",
         "boolean-toggle": "boolean-toggle",
         "flake-utils": "flake-utils",
+        "fyler-nvim": "fyler-nvim",
         "go-tagger-nvim": "go-tagger-nvim",
         "gopher-nvim": "gopher-nvim",
         "goplements-nvim": "goplements-nvim",

@@ -95,6 +95,66 @@
     ];
 
     extraConfigLua = ''
+      require("fyler").setup({
+        auto_confirm_simple_mutation = false,
+        bound_cursor = true,
+        follow_current_file = true,
+        kind = "floating",
+        kind_presets = {
+          floating = {
+            border = "rounded",
+            height = "70%",
+            width = "80%",
+            col = "center",
+            row = "center",
+            win_opts = {
+              cursorline = true,
+              number = false,
+              relativenumber = false,
+              signcolumn = "no",
+            },
+            mappings = {
+              n = {
+                ["<CR>"] = { action = "select", args = { close = true } },
+                ["<Esc>"] = { action = "close" },
+              },
+            },
+          },
+          replace = {
+            mappings = {
+              n = {
+                ["<CR>"] = { action = "select", args = { close = true } },
+              },
+            },
+          },
+        },
+        mappings = {
+          n = {
+            ["-"] = { action = "visit", args = { parent = true } },
+            ["."] = { action = "visit", args = { cursor = true } },
+            ["<BS>"] = { action = "shrink", args = { parent = true } },
+            ["<C-r>"] = { action = "refresh" },
+            ["<C-s>"] = { action = "select", args = { split = true } },
+            ["<C-t>"] = { action = "select", args = { tabedit = true } },
+            ["<C-v>"] = { action = "select", args = { vsplit = true } },
+            ["<CR>"] = { action = "select" },
+            ["="] = { action = "visit" },
+            ["g."] = { action = "toggle_ui", args = { "hidden_items" } },
+            ["gi"] = { action = "toggle_ui", args = { "indent_guides" } },
+            ["q"] = { action = "close" },
+          },
+        },
+        ui = {
+          hidden_items = {
+            switches = { "dotfiles" },
+            patterns = {},
+            always_visible = { ".gitignore", ".env.example" },
+            always_hidden = { ".git/" },
+          },
+          indent_guides = true,
+        },
+      })
+
       -- outline
       require("outline").setup({
         outline_window = { position = "right", relative_width = false, width = 40,

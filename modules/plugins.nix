@@ -26,7 +26,6 @@ in
             luasnip.enable = true;
             conform-nvim.enable = true;
             telescope.enable = true;
-            oil.enable = true;
             nvim-tree.enable = true;
             gitsigns.enable = true;
             toggleterm.enable = true;
@@ -94,6 +93,7 @@ in
             custom.atlas-nvim
             custom.match-nvim
             custom.boolean-toggle
+            custom.fyler-nvim
             # dap helpers
             nvim-dap-virtual-text
             nvim-dap-go

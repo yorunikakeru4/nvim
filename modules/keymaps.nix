@@ -24,7 +24,8 @@
         map("n", "<leader>u", "<cmd>UndotreeToggle<CR>")
         map("n", "<leader>o", function() _G.toggle_outline_sidebar() end)
         map("n", "<leader>t", function() _G.toggle_trouble_sidebar() end)
-        map("n", "<leader>l", ":Oil<CR>")
+        map("n", "<leader>l", function() require("fyler").open({ kind = "floating" }) end)
+        map("n", "<leader>L", function() require("fyler").open({ kind = "replace" }) end)
 
         -- Replace
         map("n", "<leader>v", ":Match<CR>")
