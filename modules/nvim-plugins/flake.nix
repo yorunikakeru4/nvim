@@ -112,6 +112,12 @@
                     atlas-nvim = [
                         "atlas.issues.providers.github.ui.conversation.init"
                     ];
+                    fyler = [
+                        "fyler.schemes.file"
+                        "fyler.finder"
+                        "fyler.integrations.icon"
+                        "fyler.extensions.trash"
+                    ];
                 };
                 mk =
                     pname: src:
