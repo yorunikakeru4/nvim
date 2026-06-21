@@ -72,14 +72,13 @@
 
             -- cokeline
             local cokeline_colors = {
-              active_bg = "#3c3836",
-              active_fg = "#fabd2f",
+              active_bg = "#2d353b",
+              active_fg = "#a7c080",
               inactive_bg = "NONE",
-              inactive_fg = "#928374",
-              prefix = "#665c54",
-              close = "#ea6962",
+              inactive_fg = "#859289",
+              prefix = "#7a8478",
+              close = "#e67e80",
             }
-
             require("cokeline").setup({
               default_hl = {
                 fg = function(buffer)
