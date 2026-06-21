@@ -112,7 +112,7 @@
                     atlas-nvim = [
                         "atlas.issues.providers.github.ui.conversation.init"
                     ];
-                    fyler = [
+                    fyler-nvim = [
                         "fyler.schemes.file"
                         "fyler.finder"
                         "fyler.integrations.icon"
