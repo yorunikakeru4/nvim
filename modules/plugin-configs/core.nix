@@ -1,29 +1,29 @@
-{...}: {
-  programs.nixvim = {
-    autoGroups.checktime.clear = true;
+{ ... }: {
+    programs.nixvim = {
+        autoGroups.checktime.clear = true;
 
-    autoCmd = [
-      {
-        event = [
-          "FocusGained"
-          "TermClose"
-          "TermLeave"
+        autoCmd = [
+            {
+                event = [
+                    "FocusGained"
+                    "TermClose"
+                    "TermLeave"
+                ];
+                group = "checktime";
+                command = "checktime";
+            }
+            {
+                event = [ "TextYankPost" ];
+                callback.__raw = ''
+                    function()
+                      vim.hl.on_yank()
+                    end
+                '';
+            }
         ];
-        group = "checktime";
-        command = "checktime";
-      }
-      {
-        event = ["TextYankPost"];
-        callback.__raw = ''
-          function()
-            vim.hl.on_yank()
-          end
-        '';
-      }
-    ];
 
-    extraConfigLua = ''
-      vim.opt.shortmess:append("atWI")
-    '';
-  };
+        extraConfigLua = ''
+            vim.opt.shortmess:append("atW")
+        '';
+    };
 }
