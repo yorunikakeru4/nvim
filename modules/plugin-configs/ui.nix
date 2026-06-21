@@ -119,7 +119,7 @@
               paint_arg_declarations = true,
               paint_arg_usages = true,
               paint_catch_blocks = { declarations = false, usages = false },
-              extras = { named_parameters = false, unused_args = true },
+              extras = { named_parameters = false, unused_args = { fg = "#9A9EA5", italic = true } },
               hl_priority = 130,
               performance = {
                 parse_delay = 1, slow_parse_delay = 50,
