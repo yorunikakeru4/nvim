@@ -48,6 +48,7 @@ in
 
         extraPlugins = with pkgs.vimPlugins; [
             plenary-nvim
+            everforest
             gruvbox-baby
             gruvbox-material
             rainbow-delimiters-nvim
