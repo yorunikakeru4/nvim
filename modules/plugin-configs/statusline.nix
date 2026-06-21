@@ -107,5 +107,7 @@
         })
         ins_right({ function() return "▊" end, color = { fg = colors.orange }, padding = { left=1 } })
         require("lualine").setup(lualine_config)
+        vim.api.nvim_set_hl(0, "StatusLine",   { bg = "NONE" })
+        vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE" })
     '';
 }
