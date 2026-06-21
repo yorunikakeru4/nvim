@@ -2,7 +2,7 @@
     programs.nixvim.extraConfigLua = ''
         -- lualine (custom line)
         local colors = {
-          bg = nil, fg = "#ebdbb2", yellow = "#fabd2f", cyan = "#8ec07c",
+          bg = "NONE", fg = "#ebdbb2", yellow = "#fabd2f", cyan = "#8ec07c",
           darkblue = "#458588", green = "#b8bb26", orange = "#fe8019",
           violet = "#d3869b", magenta = "#b16286", blue = "#83a598", red = "#fb4934",
         }
