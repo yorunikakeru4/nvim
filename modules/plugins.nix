@@ -75,8 +75,6 @@ in
             vim-dadbod-completion
             # misc
             nvim-jqx
-            # language-specific (nixpkgs)
-            haskell-scope-highlighting-nvim
             # custom plugins (from nvim-plugins sub-flake)
             custom.hbac-nvim
             custom.vim-autoread
