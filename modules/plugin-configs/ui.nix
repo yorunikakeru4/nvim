@@ -1,53 +1,6 @@
 { pkgs, ... }: {
     programs.nixvim = {
         plugins = {
-            ccc = {
-                enable = true;
-                settings.highlighter = {
-                    auto_enable = true;
-                    lsp = true;
-                };
-            };
-
-            image = {
-                enable = true;
-                settings = {
-                    backend = "kitty";
-                    kitty_method = "normal";
-                    integrations = {
-                        markdown = {
-                            enabled = true;
-                            clear_in_insert_mode = true;
-                            download_remote_images = true;
-                            only_render_image_at_cursor = true;
-                            only_render_image_at_cursor_mode = "inline";
-
-                            filetypes = [
-                                "markdown"
-                                "vimwiki"
-                            ];
-                        };
-                        html.enabled = false;
-                        css.enabled = false;
-                    };
-                    max_width = null;
-                    max_height = null;
-                    max_width_window_percentage = null;
-                    max_height_window_percentage = 50;
-                    window_overlap_clear_enabled = true;
-                    editor_only_render_when_focused = true;
-                    tmux_show_only_in_active_window = true;
-                    hijack_file_patterns = [
-                        "*.png"
-                        "*.jpg"
-                        "*.jpeg"
-                        "*.gif"
-                        "*.webp"
-                        "*.avif"
-                    ];
-                };
-            };
-
             render-markdown = {
                 enable = true;
                 settings = {
@@ -110,25 +63,6 @@
                 },
               },
             })
-
-            -- hlargs
-            require("hlargs").setup({
-              color = "#b8bb26",
-              highlight = {},
-              excluded_filetypes = {},
-              paint_arg_declarations = true,
-              paint_arg_usages = true,
-              paint_catch_blocks = { declarations = false, usages = false },
-              extras = { named_parameters = false, unused_args = { fg = "#9A9EA5", italic = true } },
-              hl_priority = 130,
-              performance = {
-                parse_delay = 1, slow_parse_delay = 50,
-                max_iterations = 400, max_concurrent_partial_parses = 30,
-                debounce = { partial_parse = 3, partial_insert_mode = 100, total_parse = 700, slow_parse = 5000 },
-              },
-            })
-            vim.api.nvim_set_hl(0, "Hlargs",       { fg = "#b8bb26", italic = true })
-            vim.api.nvim_set_hl(0, "HlargsUnused", { fg = "#9A9EA5", italic = true })
 
             -- seeker / telescope transparent picker
             local function set_transparent_picker_highlights()

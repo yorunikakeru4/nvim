@@ -25,7 +25,6 @@ in
             cmp.enable = true;
             luasnip.enable = true;
             conform-nvim.enable = true;
-            telescope.enable = true;
             nvim-tree.enable = true;
             gitsigns.enable = true;
             toggleterm.enable = true;
@@ -39,6 +38,7 @@ in
             flash.enable = true;
             diffview.enable = true;
             undotree.enable = true;
+            lz-n.enable = true;
             mini-icons = {
                 enable = true;
                 mockDevIcons = true;
@@ -51,14 +51,10 @@ in
             gruvbox-baby
             gruvbox-material
             rainbow-delimiters-nvim
-            vim-illuminate
             vim-matchup
-            hlargs-nvim
             nvim-cokeline
-            telescope-fzf-native-nvim
             gx-nvim
             vim-fugitive
-            gv-vim
             lazygit-nvim
             cmp-buffer
             cmp-nvim-lsp
@@ -68,11 +64,6 @@ in
             cmp-dotenv
             nix-develop-nvim
             outline-nvim
-            trouble-nvim
-            # data
-            vim-dadbod
-            vim-dadbod-ui
-            vim-dadbod-completion
             # misc
             nvim-jqx
             # custom plugins (from nvim-plugins sub-flake)
@@ -82,20 +73,46 @@ in
             custom.signup-nvim
             custom.markdown-plus-nvim
             custom.vim-highlighturl
-            custom.gopher-nvim
-            custom.gotests-nvim
-            custom.goplements-nvim
-            custom.go-tagger-nvim
             custom.vim-php-cs-fixer
             custom.switchboard-nvim
             custom.atlas-nvim
             custom.match-nvim
             custom.boolean-toggle
-            custom.fyler-nvim
             # dap helpers
             nvim-dap-virtual-text
-            nvim-dap-go
             nvim-dap-python
+            {
+                plugin = telescope-nvim;
+                optional = true;
+            }
+            {
+                plugin = telescope-fzf-native-nvim;
+                optional = true;
+            }
+            {
+                plugin = trouble-nvim;
+                optional = true;
+            }
+            {
+                plugin = custom.gopher-nvim;
+                optional = true;
+            }
+            {
+                plugin = custom.gotests-nvim;
+                optional = true;
+            }
+            {
+                plugin = custom.goplements-nvim;
+                optional = true;
+            }
+            {
+                plugin = custom.go-tagger-nvim;
+                optional = true;
+            }
+            {
+                plugin = nvim-dap-go;
+                optional = true;
+            }
         ];
     };
 }

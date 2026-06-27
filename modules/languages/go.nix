@@ -62,35 +62,38 @@ in
         };
 
         programs.nixvim.extraConfigLua = ''
-                  -- gopher.nvim
-                  require("gopher").setup({})
+            vim.api.nvim_create_autocmd("FileType", {
+              pattern = "go",
+              group = vim.api.nvim_create_augroup("GoLazyHelpers", { clear = true }),
+              callback = function()
+                vim.cmd.packadd("gopher-nvim")
+                vim.cmd.packadd("goplements-nvim")
+                vim.cmd.packadd("go-tagger-nvim")
+                vim.cmd.packadd("gotests-nvim")
+                vim.cmd.packadd("nvim-dap-go")
 
-                  -- goplements (show interface implementations)
-                  require("goplements").setup({})
-
-                  -- go-tagger (struct tag generator)
-                  require("go-tagger").setup({ skip_private = true })
-
-                  -- gotests.nvim
-                  require("gotests").setup()
-
-                  -- nvim-dap-go (delve adapter for Go)
-                  require("dap-go").setup({
-                    dap_configurations = {
-                      {
-                        type = "go",
-                        name = "Attach remote",
-                        mode = "remote",
-                        request = "attach",
-                      },
+                require("gopher").setup({})
+                require("goplements").setup({})
+                require("go-tagger").setup({ skip_private = true })
+                require("gotests").setup()
+                require("dap-go").setup({
+                  dap_configurations = {
+                    {
+                      type = "go",
+                      name = "Attach remote",
+                      mode = "remote",
+                      request = "attach",
                     },
-                    delve = {
-                      path = "dlv",
-                      initialize_timeout_sec = 20,
-            args = {},
-                      build_flags = {},
-                    },
-                  })
+                  },
+                  delve = {
+                    path = "dlv",
+                    initialize_timeout_sec = 20,
+                    args = {},
+                    build_flags = {},
+                  },
+                })
+              end,
+            })
         '';
     };
 }

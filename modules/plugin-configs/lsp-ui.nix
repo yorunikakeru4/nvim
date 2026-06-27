@@ -1,58 +1,49 @@
-{...}: {
-  programs.nixvim = {
-    plugins = {
-      neogen = {
-        enable = true;
-        settings = {};
-      };
+{ ... }: {
+    programs.nixvim = {
+        plugins = {
+            neogen = {
+                enable = true;
+                settings = { };
+            };
 
-      fidget.settings = {
-        progress = {
-          display = {
-            render_limit = 5;
-            done_ttl = 2;
-            done_icon = "✓";
-            progress_style = "FidgetProgress";
-            done_style = "FidgetDone";
-            group_style = "FidgetGroup";
-            icon_style = "FidgetIcon";
-            progress_icon.pattern = "dots";
-          };
-          poll_rate = 0;
-          suppress_on_insert = false;
-          ignore_done_already = false;
-          ignore = ["lua_ls"];
-        };
-        notification.window = {
-          winblend = 0;
-          relative = "editor";
-        };
-        notification.override_vim_notify = false;
-      };
+            fidget.settings = {
+                progress = {
+                    display = {
+                        render_limit = 5;
+                        done_ttl = 2;
+                        done_icon = "✓";
+                        progress_style = "FidgetProgress";
+                        done_style = "FidgetDone";
+                        group_style = "FidgetGroup";
+                        icon_style = "FidgetIcon";
+                        progress_icon.pattern = "dots";
+                    };
+                    poll_rate = 0;
+                    suppress_on_insert = false;
+                    ignore_done_already = false;
+                    ignore = [ "lua_ls" ];
+                };
+                notification.window = {
+                    winblend = 0;
+                    relative = "editor";
+                };
+                notification.override_vim_notify = false;
+            };
 
-      lspsaga = {
-        enable = true;
-        settings = {
-          symbol_in_winbar.enable = false;
-          implement.enable = false;
-          lightbulb.enable = false;
+            lazydev = {
+                enable = true;
+                settings.library = [
+                    {
+                        path = "\${3rd}/luv/library";
+                        words = [ "vim%.uv" ];
+                    }
+                ];
+            };
         };
-      };
 
-      lazydev = {
-        enable = true;
-        settings.library = [
-          {
-            path = "\${3rd}/luv/library";
-            words = ["vim%.uv"];
-          }
-        ];
-      };
+        extraConfigLua = ''
+            -- signup.nvim (signature help)
+            require("signup").setup({})
+        '';
     };
-
-    extraConfigLua = ''
-      -- signup.nvim (signature help)
-      require("signup").setup({})
-    '';
-  };
 }

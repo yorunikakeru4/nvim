@@ -24,8 +24,6 @@
         map("n", "<leader>u", "<cmd>UndotreeToggle<CR>")
         map("n", "<leader>o", function() _G.toggle_outline_sidebar() end)
         map("n", "<leader>t", function() _G.toggle_trouble_sidebar() end)
-        map("n", "<leader>l", function() require("fyler").open({ kind = "floating" }) end)
-        map("n", "<leader>L", function() require("fyler").open({ kind = "replace" }) end)
 
         -- Replace
         map("n", "<leader>v", ":Match<CR>")
@@ -49,14 +47,12 @@
         map("n", "<A-h>", "<<")
         -- Git
         map("n", "<leader>gs", "<cmd>Gitsigns diffthis<CR>")
-        map("n", "<leader>gh", "<cmd>GV<CR>")
         map("n", "<leader>gg", "<cmd>LazyGit<CR>")
         map("n", "<leader>gp", "<cmd>AtlasPulls github<CR>")
         map("n", "<leader>gi", "<cmd>AtlasIssues github<CR>")
         map("n", "<leader>g/", "<cmd>AtlasSearch github<CR>")
 
         -- Find
-        local tb = require("telescope.builtin")
         local layout = {
           layout_strategy = "flex",
           layout_config = {
@@ -74,14 +70,15 @@
           vim.cmd('normal! "ay')
           local lines = vim.fn.getreg("a", 1, 1)
           local text = table.concat(lines, " ")
+          local tb = _G.nixvim_telescope_builtin()
           tb.live_grep(vim.tbl_extend("force", layout, { default_text = text }))
         end)
         map("n", "fd", vim.lsp.buf.definition)
-        map("n", "ff", function() tb.find_files(layout) end)
-        map("n", "fg", function() tb.live_grep(layout) end)
-        map("n", "fb", "<cmd>Telescope buffers<CR>")
-        map("n", "fh", "<cmd>Telescope help_tags<CR>")
-        map("n", "fr", "<cmd>Telescope oldfiles<CR>")
+        map("n", "ff", function() _G.nixvim_telescope_builtin().find_files(layout) end)
+        map("n", "fg", function() _G.nixvim_telescope_builtin().live_grep(layout) end)
+        map("n", "fb", function() _G.nixvim_telescope_builtin().buffers(layout) end)
+        map("n", "fh", function() _G.nixvim_telescope_builtin().help_tags(layout) end)
+        map("n", "fr", function() _G.nixvim_telescope_builtin().oldfiles(layout) end)
 
         -- Wrap with function (visual)
         map("v", "nf", function()
@@ -100,12 +97,12 @@
         end)
 
         -- LSP actions
-        map("n", "nr", ":Lspsaga rename<CR>")
+        map("n", "nr", vim.lsp.buf.rename)
         map("n", "nh", vim.lsp.buf.hover)
-        map("n", "no", ":Lspsaga incoming_calls <CR>")
-        map("n", "nq", ":Lspsaga outgoing_calls <CR>")
-        map({ "n", "v" }, "nc", ":Lspsaga code_action<CR>")
-        map("n", "nd", ":Lspsaga goto_definition<CR>")
+        map("n", "no", vim.lsp.buf.incoming_calls)
+        map("n", "nq", vim.lsp.buf.outgoing_calls)
+        map({ "n", "v" }, "nc", vim.lsp.buf.code_action)
+        map("n", "nd", vim.lsp.buf.definition)
         map("n", "na", function()
           local is_rust = vim.bo.filetype == "rust"
           local is_haskell = vim.bo.filetype == "haskell"
@@ -165,7 +162,7 @@
           vim.cmd("normal! ciw")
         end
         map("n", "ni", smart_ci)
-        map("n", "nw", ":Lspsaga finder <CR>")
+        map("n", "nw", function() _G.nixvim_telescope_builtin().lsp_references(layout) end)
 
         -- Add $ to word start
         local function add_dollar()
@@ -182,10 +179,10 @@
         map("v", "nt", ":GoTagAdd ")
 
         -- Diagnostics
-        map("n", "zj", "<cmd>Telescope diagnostics<CR>")
+        map("n", "zj", function() _G.nixvim_telescope_builtin().diagnostics(layout) end)
         map("n", "zk", vim.diagnostic.open_float)
-        map("n", "zh", ":Lspsaga diagnostic_jump_prev <CR>")
-        map("n", "zl", ":Lspsaga diagnostic_jump_next <CR>")
+        map("n", "zh", vim.diagnostic.goto_prev)
+        map("n", "zl", vim.diagnostic.goto_next)
 
         -- Select all
         map("n", "<leader>ac", 'ggVG"+y')

@@ -50,22 +50,6 @@
         "type": "github"
       }
     },
-    "fyler-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1782060524,
-        "narHash": "sha256-sw3YNBFYfej1hB+a3b9f3SdL/CZPrvXfZTGmSkq3MpA=",
-        "owner": "FylerOrg",
-        "repo": "fyler.nvim",
-        "rev": "da6625941fe23625a5cea1d5d06233f4c7494d4c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "FylerOrg",
-        "repo": "fyler.nvim",
-        "type": "github"
-      }
-    },
     "go-tagger-nvim": {
       "flake": false,
       "locked": {
@@ -199,7 +183,6 @@
         "atlas-nvim": "atlas-nvim",
         "boolean-toggle": "boolean-toggle",
         "flake-utils": "flake-utils",
-        "fyler-nvim": "fyler-nvim",
         "go-tagger-nvim": "go-tagger-nvim",
         "gopher-nvim": "gopher-nvim",
         "goplements-nvim": "goplements-nvim",

@@ -80,11 +80,6 @@
             flake = false;
         };
 
-        fyler-nvim = {
-            url = "github:FylerOrg/fyler.nvim";
-            flake = false;
-        };
-
     };
 
     outputs =
@@ -111,12 +106,6 @@
 
                     atlas-nvim = [
                         "atlas.issues.providers.github.ui.conversation.init"
-                    ];
-                    fyler-nvim = [
-                        "fyler.schemes.file"
-                        "fyler.finder"
-                        "fyler.integrations.icon"
-                        "fyler.extensions.trash"
                     ];
                 };
                 mk =
@@ -150,7 +139,6 @@
                     atlas-nvim = mk "atlas-nvim" inputs.atlas-nvim;
                     match-nvim = mk "match-nvim" inputs.match-nvim;
                     boolean-toggle = mk "boolean-toggle" inputs.boolean-toggle;
-                    fyler-nvim = mk "fyler-nvim" inputs.fyler-nvim;
                 };
             }
         );
